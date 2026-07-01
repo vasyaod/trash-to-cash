@@ -9,20 +9,21 @@
           --hi:#22c55e; --med:#eab308; --low:#ef4444; --accent:#3b82f6; }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
-  header { padding:20px 24px 12px; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); z-index:5; }
+  header { padding:20px 24px 10px; background:var(--bg); }
   h1 { margin:0 0 4px; font-size:20px; }
   .sub { color:var(--mut); font-size:13px; }
   .stats { display:flex; flex-wrap:wrap; gap:16px; margin-top:12px; }
   .stat { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 14px; }
   .stat b { font-size:18px; } .stat span { color:var(--mut); font-size:12px; display:block; }
-  .controls { display:flex; gap:12px; flex-wrap:wrap; margin-top:14px; align-items:center; }
+  .controls { position:sticky; top:0; z-index:6; background:var(--bg); border-bottom:1px solid var(--line);
+    display:flex; gap:12px; flex-wrap:wrap; align-items:center; padding:10px 24px; }
   input[type=search], select { background:var(--card); border:1px solid var(--line); color:var(--fg);
           border-radius:8px; padding:8px 10px; font-size:14px; }
   input[type=search] { min-width:240px; flex:1; }
   main { padding:16px 24px 60px; }
   table { border-collapse:collapse; width:100%; }
   th,td { padding:8px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:middle; }
-  th { position:sticky; top:0; color:var(--mut); font-size:12px; text-transform:uppercase; letter-spacing:.04em;
+  th { position:sticky; top:57px; color:var(--mut); font-size:12px; text-transform:uppercase; letter-spacing:.04em;
        cursor:pointer; user-select:none; background:var(--bg); white-space:nowrap; }
   th.num, td.num { text-align:right; }
   tr:hover td { background:#12151b; }
@@ -109,7 +110,7 @@
     .stats { gap:6px; margin-top:8px; }
     .stat { padding:4px 9px; border-radius:8px; }
     .stat b { font-size:14px; } .stat span { font-size:10px; }
-    .controls { margin-top:8px; gap:8px; }
+    .controls { gap:8px; padding:8px 14px; }
     input[type=search], select { padding:7px 9px; font-size:13px; }
     main { padding:8px 0 60px; }
     #tbl thead { display:none; }
@@ -137,15 +138,15 @@
   <div class="sub">Prices from real eBay Sold-listing medians · shipping from real eBay comps.
     <a href="README.md">README</a> · <a href="catalog.json">catalog.json</a></div>
   <div class="stats" id="stats"></div>
-  <div class="controls">
-    <input type="search" id="q" placeholder="Filter by title…">
-    <select id="conf">
-      <option value="">All confidence</option>
-      <option value="high">high</option><option value="med">med</option><option value="low">low</option>
-    </select>
-    <span class="muted" id="count"></span>
-  </div>
 </header>
+<div class="controls">
+  <input type="search" id="q" placeholder="Filter by title…">
+  <select id="conf">
+    <option value="">All confidence</option>
+    <option value="high">high</option><option value="med">med</option><option value="low">low</option>
+  </select>
+  <span class="muted" id="count"></span>
+</div>
 <main>
   <table id="tbl">
     <thead><tr>
