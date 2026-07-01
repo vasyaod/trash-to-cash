@@ -1,5 +1,5 @@
 {
- "total": 112,
+ "total": 113,
  "items": [
   {
    "lot_id": 64,
@@ -1020,6 +1020,21 @@
    ]
   },
   {
+   "lot_id": 113,
+   "title": "Funko Pop Captain Marvel #427 Vers",
+   "confidence": "med",
+   "ebay_price_median": 9.55,
+   "ebay_price_n": 40,
+   "est_price_old": null,
+   "ship_ebay_usd": 6.95,
+   "ship_est_usd": 6,
+   "n_offers": 21,
+   "net_ebay": 2.6,
+   "images": [
+    "IMG20260626194530.jpg"
+   ]
+  },
+  {
    "lot_id": 73,
    "title": "Heavy-Duty Revolving Leather Hole Punch Pliers \u2014 6-Size Rotary",
    "confidence": "med",
@@ -1752,15 +1767,16 @@
     31,
     32,
     33,
-    34
+    34,
+    113
    ],
-   "ebay_price_median": 359.93,
+   "ebay_price_median": 369.48,
    "ebay_price_n": null,
    "est_price_old": null,
    "ship_ebay_usd": 27.7,
    "ship_est_usd": null,
    "n_offers": 24,
-   "net_ebay": 332.23,
+   "net_ebay": 341.78,
    "images": [
     "IMG20260626194530.jpg",
     "IMG20260626194602.jpg",
