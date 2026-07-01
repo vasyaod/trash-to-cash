@@ -1757,10 +1757,10 @@
    "ebay_price_median": 359.93,
    "ebay_price_n": null,
    "est_price_old": null,
-   "ship_ebay_usd": null,
+   "ship_ebay_usd": 27.7,
    "ship_est_usd": null,
-   "n_offers": null,
-   "net_ebay": 168.0,
+   "n_offers": 24,
+   "net_ebay": 332.23,
    "images": [
     "IMG20260626194530.jpg",
     "IMG20260626194602.jpg",
