@@ -130,7 +130,7 @@
 <header>
   <h1>Trash to Cash — Resale Catalog</h1>
   <div class="sub">Prices from real eBay Sold-listing medians · shipping from real eBay comps.
-    <a href="README.md">README</a> · <a href="catalog.csv">catalog.csv</a></div>
+    <a href="README.md">README</a> · <a href="catalog.json">catalog.json</a></div>
   <div class="stats" id="stats"></div>
   <div class="controls">
     <input type="search" id="q" placeholder="Filter by title…">
@@ -157,7 +157,7 @@
     <tbody id="rows"></tbody>
   </table>
 </main>
-<footer>Static page — reads <code>catalog.csv</code> at load and shows thumbnails from <code>img_small/</code>. Tap a photo to open the gallery. No build step.</footer>
+<footer>Static page — reads <code>catalog.json</code> at load and shows thumbnails from <code>img_small/</code>. Tap a photo to open the gallery. No build step.</footer>
 
 <div id="lb" class="lb-overlay" hidden>
   <button class="lb-x" id="lbX" aria-label="Close">&times;</button>
@@ -178,36 +178,11 @@
 
 <script>
 const IMG = 'img_small/';
-// minimal RFC-4180 CSV parser (handles quoted fields, commas, embedded newlines)
-function parseCSV(text){
-  const rows=[]; let row=[], field='', i=0, q=false;
-  while(i<text.length){
-    const c=text[i];
-    if(q){
-      if(c==='"'){ if(text[i+1]==='"'){field+='"'; i++;} else q=false; }
-      else field+=c;
-    } else {
-      if(c==='"') q=true;
-      else if(c===','){ row.push(field); field=''; }
-      else if(c==='\n'){ row.push(field); rows.push(row); row=[]; field=''; }
-      else if(c==='\r'){}
-      else field+=c;
-    }
-    i++;
-  }
-  if(field.length||row.length){ row.push(field); rows.push(row); }
-  return rows;
-}
-const num = v => { const n=parseFloat(v); return isNaN(n)?null:n; };
+const num = v => { const n=parseFloat(v); return (v===null||v===''||isNaN(n))?null:n; };
 let DATA=[], sortK='net_ebay', sortDir=-1;
 
-fetch('catalog.csv').then(r=>r.text()).then(txt=>{
-  const rows=parseCSV(txt).filter(r=>r.length>1);
-  const head=rows.shift();
-  DATA=rows.map((r,idx)=>{ const o={}; head.forEach((h,j)=>o[h]=r[j]);
-    o._imgs=(o.images||'').split(';').map(s=>s.trim()).filter(Boolean);
-    o._i=idx;
-    return o; });
+fetch('catalog.json').then(r=>r.json()).then(items=>{
+  DATA=items.map((o,idx)=>{ o._imgs=Array.isArray(o.images)?o.images:[]; o._i=idx; return o; });
   renderStats(); render();
 });
 
