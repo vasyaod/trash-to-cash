@@ -41,6 +41,25 @@
   .seller { margin-top:3px; }
   .seller a { margin:0 1px; }
   .thumbwrap.lb, .imglink { cursor:pointer; }
+  tr.card { cursor:pointer; }
+  /* detail modal */
+  .d-overlay { position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:55;
+    display:flex; align-items:flex-start; justify-content:center; overflow:auto; padding:24px 12px; }
+  .d-overlay[hidden] { display:none; }
+  .d-box { background:var(--card); border:1px solid var(--line); border-radius:14px;
+    width:100%; max-width:520px; padding:18px 18px 20px; position:relative; }
+  .d-x { position:absolute; top:8px; right:12px; background:none; border:none; color:var(--mut);
+    font-size:30px; line-height:1; cursor:pointer; }
+  .d-title { font-size:17px; font-weight:700; margin:0 28px 10px 0; }
+  .d-hero { width:100%; max-height:280px; object-fit:contain; background:#111; border-radius:10px;
+    cursor:pointer; margin-bottom:6px; }
+  .d-thumbs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+  .d-thumbs img { width:52px; height:52px; object-fit:cover; border-radius:6px; border:1px solid var(--line); cursor:pointer; }
+  .d-fields { width:100%; border-collapse:collapse; margin:4px 0 12px; }
+  .d-fields th, .d-fields td { text-align:left; padding:7px 8px; border-bottom:1px solid var(--line);
+    font-size:14px; vertical-align:top; }
+  .d-fields th { color:var(--mut); font-weight:500; width:44%; white-space:nowrap; }
+  .d-fields td { font-weight:600; }
   .imglink { color:var(--accent); } .imglink:hover { text-decoration:underline; }
   footer { color:var(--mut); font-size:12px; padding:0 24px 40px; }
   /* lightbox */
@@ -132,6 +151,13 @@
   <div class="lb-count" id="lbCount"></div>
 </div>
 
+<div id="detail" class="d-overlay" hidden>
+  <div class="d-box">
+    <button class="d-x" id="dX" aria-label="Close">&times;</button>
+    <div id="dBody"></div>
+  </div>
+</div>
+
 <script>
 const IMG = 'img_small/';
 // minimal RFC-4180 CSV parser (handles quoted fields, commas, embedded newlines)
@@ -160,8 +186,9 @@ let DATA=[], sortK='net_ebay', sortDir=-1;
 fetch('catalog.csv').then(r=>r.text()).then(txt=>{
   const rows=parseCSV(txt).filter(r=>r.length>1);
   const head=rows.shift();
-  DATA=rows.map(r=>{ const o={}; head.forEach((h,j)=>o[h]=r[j]);
+  DATA=rows.map((r,idx)=>{ const o={}; head.forEach((h,j)=>o[h]=r[j]);
     o._imgs=(o.images||'').split(';').map(s=>s.trim()).filter(Boolean);
+    o._i=idx;
     return o; });
   renderStats(); render();
 });
@@ -196,7 +223,7 @@ function render(){
            <img class="thumb" loading="lazy" src="${IMG}${first}" alt="">
            ${d._imgs.length>1?`<span class="imgcount">${d._imgs.length}</span>`:''}</span>`
       : '';
-    return `<tr>
+    return `<tr data-i="${d._i}" class="card">
       <td>${thumb}</td>
       <td class="title">${esc(d.title)}
         <div class="muted">📷 ${d._imgs.map((im,i)=>`<span class="lb imglink" data-imgs="${imgAttr}" data-idx="${i}">${i+1}</span>`).join(' · ')}</div>
@@ -246,19 +273,58 @@ function lbShow(){ if(!lbList.length) return;
 }
 function lbNext(){ lbIdx=(lbIdx+1)%lbList.length; lbShow(); }
 function lbPrev(){ lbIdx=(lbIdx-1+lbList.length)%lbList.length; lbShow(); }
-function lbClose(){ lb.hidden=true; lbImg.src=''; document.body.style.overflow=''; }
+function lbClose(){ lb.hidden=true; lbImg.src=''; document.body.style.overflow=detail.hidden?'':'hidden'; }
 
 document.getElementById('rows').addEventListener('click', e=>{
-  const el=e.target.closest('.lb'); if(!el) return;
-  const imgs=(el.dataset.imgs||'').split(',').filter(Boolean);
-  if(imgs.length) lbOpen(imgs, +el.dataset.idx||0);
+  const el=e.target.closest('.lb');
+  if(el){ const imgs=(el.dataset.imgs||'').split(',').filter(Boolean);
+    if(imgs.length) lbOpen(imgs, +el.dataset.idx||0); return; }
+  if(e.target.closest('a')) return;                 // seller links → follow default
+  const tr=e.target.closest('tr[data-i]');          // anywhere else on the card → details
+  if(tr) openDetail(+tr.dataset.i);
 });
 document.getElementById('lbNext').onclick=lbNext;
 document.getElementById('lbPrev').onclick=lbPrev;
 document.getElementById('lbX').onclick=lbClose;
 lb.addEventListener('click', e=>{ if(e.target===lb || e.target.id==='lbStage') lbClose(); });
-document.addEventListener('keydown', e=>{ if(lb.hidden) return;
+document.addEventListener('keydown', e=>{
+  if(!detail.hidden && e.key==='Escape'){ closeDetail(); return; }
+  if(lb.hidden) return;
   if(e.key==='Escape') lbClose(); else if(e.key==='ArrowRight') lbNext(); else if(e.key==='ArrowLeft') lbPrev(); });
+/* ---- item detail modal (all fields) ---- */
+const detail=document.getElementById('detail'), dBody=document.getElementById('dBody');
+const money=v=>{ const n=num(v); return n===null?'—':'$'+n.toFixed(2); };
+function openDetail(i){
+  const d=DATA[i]; if(!d) return;
+  const imgAttr=d._imgs.join(',');
+  const badge=`<span class="badge b-${d.confidence}">${d.confidence}</span>`;
+  const fields=[
+    ['Confidence', badge],
+    ['eBay price (sold median)', money(d.ebay_price_median)],
+    ['Price comps (n)', d.ebay_price_n||'—'],
+    ['Prior estimate', money(d.est_price_old)],
+    ['eBay shipping (median)', money(d.ship_ebay_usd)],
+    ['Shipping comps (n)', d.n_offers||'—'],
+    ['Est. shipping', money(d.ship_est_usd)],
+    ['Net (price − ship)', `<span class="${num(d.net_ebay)<0?'neg':'pos'}">${money(d.net_ebay)}</span>`],
+    ['Photos', d.n_images||d._imgs.length],
+  ].map(([k,v])=>`<tr><th>${k}</th><td>${v}</td></tr>`).join('');
+  const hero=d._imgs[0];
+  dBody.innerHTML=`
+    <div class="d-title">${esc(d.title)}</div>
+    ${hero?`<img class="d-hero lb" data-imgs="${imgAttr}" data-idx="0" src="${IMG}${hero}" alt="">`:''}
+    ${d._imgs.length>1?`<div class="d-thumbs">${d._imgs.map((im,j)=>`<img class="lb" data-imgs="${imgAttr}" data-idx="${j}" loading="lazy" src="${IMG}${im}" alt="">`).join('')}</div>`:''}
+    <table class="d-fields"><tbody>${fields}</tbody></table>
+    ${sellerLinks(d.title)}`;
+  detail.hidden=false; document.body.style.overflow='hidden';
+}
+function closeDetail(){ detail.hidden=true; dBody.innerHTML=''; if(lb.hidden) document.body.style.overflow=''; }
+document.getElementById('dX').onclick=closeDetail;
+detail.addEventListener('click', e=>{ if(e.target===detail) closeDetail(); });
+// clicks on hero/thumbs inside the modal open the photo gallery
+dBody.addEventListener('click', e=>{ const el=e.target.closest('.lb'); if(!el) return;
+  const imgs=(el.dataset.imgs||'').split(',').filter(Boolean); if(imgs.length) lbOpen(imgs, +el.dataset.idx||0); });
+
 // touch swipe
 let tx=0, ty=0;
 lb.addEventListener('touchstart', e=>{ tx=e.touches[0].clientX; ty=e.touches[0].clientY; }, {passive:true});
