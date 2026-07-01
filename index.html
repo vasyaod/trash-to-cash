@@ -145,7 +145,7 @@
   <div class="stats" id="stats"></div>
 </header>
 <div class="controls">
-  <input type="search" id="q" placeholder="Filter by title…">
+  <input type="search" id="q" placeholder="Filter by title or #id…">
   <select id="conf">
     <option value="">All confidence</option>
     <option value="high">high</option><option value="med">med</option><option value="low">low</option>
@@ -212,7 +212,15 @@ const stat=(b,s)=>`<div class="stat"><b>${b}</b><span>${s}</span></div>`;
 function render(){
   const q=document.getElementById('q').value.toLowerCase();
   const cf=document.getElementById('conf').value;
-  let list=DATA.filter(d=>(!cf||d.confidence===cf) && d.title.toLowerCase().includes(q));
+  const qn=q.replace(/^#/,'');                       // lot-id query (strip leading #)
+  const idQuery=/^#?\d+$/.test(q);
+  let list=DATA.filter(d=>{
+    if(cf && d.confidence!==cf) return false;
+    if(!q) return true;
+    if(d.title.toLowerCase().includes(q)) return true;
+    if(idQuery && String(d.lot_id).includes(qn)) return true;   // match by lot id too
+    return false;
+  });
   list.sort((a,b)=>{
     let x=a[sortK], y=b[sortK], nx=num(x), ny=num(y);
     if(nx!==null&&ny!==null){ x=nx; y=ny; } else { x=(x||'').toLowerCase(); y=(y||'').toLowerCase(); }
