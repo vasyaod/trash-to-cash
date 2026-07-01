@@ -155,15 +155,15 @@
 <main>
   <table id="tbl">
     <thead><tr>
-      <th>Photo</th>
-      <th data-k="title">Item</th>
-      <th data-k="confidence">Conf</th>
-      <th class="num" data-k="ebay_price_median">Price $</th>
-      <th class="num" data-k="ebay_price_n">Comps</th>
-      <th class="num" data-k="ship_ebay_usd">Ship $</th>
-      <th class="num" data-k="n_offers">Ship n</th>
-      <th class="num" data-k="net_ebay">Net $</th>
-      <th class="num" data-k="n_images">Imgs</th>
+      <th title="Hero photo — tap to open the photo gallery">Photo</th>
+      <th data-k="title" title="Item title, lot id (#), photo links and 'other sellers' search links. Click to sort A→Z.">Item</th>
+      <th data-k="confidence" title="Confidence in the ID + pricing (high / med / low), based on comp count and match quality. Click to sort.">Conf</th>
+      <th class="num" data-k="ebay_price_median" title="Real eBay Sold/Completed median — the realized market price (not asking). Click to sort.">Price $</th>
+      <th class="num" data-k="ebay_price_n" title="Number of eBay sold listings behind the price median (more = more reliable).">Comps</th>
+      <th class="num" data-k="ship_ebay_usd" title="Real eBay charged-delivery median, Free-Shipping listings excluded (their postage is baked into price).">Ship $</th>
+      <th class="num" data-k="n_offers" title="Number of paid shipping comps behind Ship $.">Ship n</th>
+      <th class="num" data-k="net_ebay" title="Price − shipping. Gross margin before eBay/payment fees (~13–15%) and cost of goods.">Net $</th>
+      <th class="num" data-k="n_images" title="Number of photos grouped into this item.">Imgs</th>
     </tr></thead>
     <tbody id="rows"></tbody>
   </table>
