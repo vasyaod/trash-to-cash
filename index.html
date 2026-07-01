@@ -42,6 +42,11 @@
   .seller a { margin:0 1px; }
   .thumbwrap.lb, .imglink { cursor:pointer; }
   tr.card { cursor:pointer; }
+  .lotid { display:inline-block; font-size:11px; font-weight:700; color:var(--mut);
+    background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:1px 6px;
+    margin-right:5px; cursor:pointer; user-select:none; white-space:nowrap; vertical-align:middle; }
+  .lotid:hover { border-color:var(--accent); color:var(--fg); }
+  .lotid.copied { color:var(--hi); border-color:var(--hi); }
   /* detail modal */
   .d-overlay { position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:55;
     display:flex; align-items:flex-start; justify-content:center; overflow:auto; padding:24px 12px; }
@@ -220,7 +225,7 @@ function render(){
       : '';
     return `<tr data-i="${d._i}" class="card">
       <td>${thumb}</td>
-      <td class="title">${esc(d.title)}
+      <td class="title"><span class="lotid" data-lot="${d.lot_id}" title="Copy lot ID">#${d.lot_id}</span> ${esc(d.title)}
         <div class="muted">📷 ${d._imgs.map((im,i)=>`<span class="lb imglink" data-imgs="${imgAttr}" data-idx="${i}">${i+1}</span>`).join(' · ')}</div>
         ${sellerLinks(d.title)}</td>
       <td data-label="">${badge(d.confidence)}</td>
@@ -252,6 +257,22 @@ document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{
 document.getElementById('q').oninput=render;
 document.getElementById('conf').onchange=render;
 
+/* ---- copy lot id to clipboard (chips in list + modal) ---- */
+function copyText(t){
+  if(navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t);
+  const ta=document.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} ta.remove();
+  return Promise.resolve();
+}
+document.addEventListener('click', e=>{
+  const el=e.target.closest('.lotid'); if(!el) return;
+  e.preventDefault(); e.stopPropagation();
+  copyText(el.dataset.lot).then(()=>{
+    const old=el.textContent; el.classList.add('copied'); el.textContent='✓ copied';
+    setTimeout(()=>{ el.textContent=old; el.classList.remove('copied'); }, 1000);
+  });
+}, true);   // capture phase → runs before the row's detail-open handler
+
 /* ---- lightbox gallery (arrows, keyboard, touch-swipe) ---- */
 const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'),
       lbCount=document.getElementById('lbCount');
@@ -275,6 +296,7 @@ document.getElementById('rows').addEventListener('click', e=>{
   if(el){ const imgs=(el.dataset.imgs||'').split(',').filter(Boolean);
     if(imgs.length) lbOpen(imgs, +el.dataset.idx||0); return; }
   if(e.target.closest('a')) return;                 // seller links → follow default
+  if(e.target.closest('.lotid')) return;            // lot-id chip → copy (handled below)
   const tr=e.target.closest('tr[data-i]');          // anywhere else on the card → details
   if(tr) openDetail(+tr.dataset.i);
 });
@@ -300,7 +322,7 @@ function openDetail(i){
   const imgAttr=d._imgs.join(',');
   const badge=`<span class="badge b-${d.confidence}">${d.confidence}</span>`;
   const fields=[
-    ['Lot #', d.lot_id ?? '—'],
+    ['Lot #', d.lot_id!=null ? `<span class="lotid" data-lot="${d.lot_id}" title="Copy lot ID">#${d.lot_id}</span>` : '—'],
     ['Confidence', badge],
     ['eBay price (sold median)', money(d.ebay_price_median)],
     ['Price comps (n)', d.ebay_price_n||'—'],
