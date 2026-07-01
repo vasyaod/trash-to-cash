@@ -36,6 +36,11 @@
   .b-high { background:rgba(34,197,94,.15); color:var(--hi); }
   .b-med  { background:rgba(234,179,8,.15); color:var(--med); }
   .b-low  { background:rgba(239,68,68,.15); color:var(--low); }
+  .b-bundle { background:rgba(59,130,246,.15); color:var(--accent); }
+  .refs { display:flex; flex-wrap:wrap; gap:5px; }
+  .lotref { display:inline-block; font-size:12px; font-weight:700; color:var(--accent);
+    background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:1px 7px; cursor:pointer; }
+  .lotref:hover { border-color:var(--accent); }
   .neg { color:var(--low); } .pos { color:var(--hi); }
   a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
   .muted { color:var(--mut); font-size:12px; }
@@ -214,7 +219,7 @@ function render(){
     return x<y?-1*sortDir : x>y?1*sortDir : 0;
   });
   document.getElementById('count').textContent = list.length+' / '+DATA.length+' shown';
-  const badge=c=>`<span class="badge b-${c}">${c}</span>`;
+  const badge=d=>d.is_bundle?`<span class="badge b-bundle">bundle</span>`:`<span class="badge b-${d.confidence}">${d.confidence}</span>`;
   document.getElementById('rows').innerHTML = list.map(d=>{
     const first=d._imgs[0];
     const net=num(d.net_ebay);
@@ -229,7 +234,7 @@ function render(){
       <td class="title"><span class="lotid" data-lot="${d.lot_id}" title="Copy lot ID">#${d.lot_id}</span> ${esc(d.title)}
         <div class="muted">📷 ${d._imgs.map((im,i)=>`<span class="lb imglink" data-imgs="${imgAttr}" data-idx="${i}">${i+1}</span>`).join(' · ')}</div>
         ${sellerLinks(d.title)}</td>
-      <td data-label="">${badge(d.confidence)}</td>
+      <td data-label="">${badge(d)}</td>
       <td class="num" data-label="Price $">${fmt(d.ebay_price_median)}</td>
       <td class="num muted col-sm-hide" data-label="Comps">${d.ebay_price_n||''}</td>
       <td class="num" data-label="Ship $">${fmt(d.ship_ebay_usd)}</td>
@@ -323,19 +328,34 @@ function lotFromHash(){ const m=(location.hash||'').match(/^#lot-(\d+)$/); retur
 function openDetail(i, fromPop){
   const d=DATA[i]; if(!d) return;
   const imgAttr=d._imgs.join(',');
-  const badge=`<span class="badge b-${d.confidence}">${d.confidence}</span>`;
-  const fields=[
-    ['Lot #', d.lot_id!=null ? `<span class="lotid" data-lot="${d.lot_id}" title="Copy lot ID">#${d.lot_id}</span>` : '—'],
-    ['Confidence', badge],
-    ['eBay price (sold median)', money(d.ebay_price_median)],
-    ['Price comps (n)', d.ebay_price_n||'—'],
-    ['Prior estimate', money(d.est_price_old)],
-    ['eBay shipping (median)', money(d.ship_ebay_usd)],
-    ['Shipping comps (n)', d.n_offers||'—'],
-    ['Est. shipping', money(d.ship_est_usd)],
-    ['Net (price − ship)', `<span class="${num(d.net_ebay)<0?'neg':'pos'}">${money(d.net_ebay)}</span>`],
-    ['Photos', d.n_images||d._imgs.length],
-  ].map(([k,v])=>`<tr><th>${k}</th><td>${v}</td></tr>`).join('');
+  const badge=d.is_bundle?`<span class="badge b-bundle">bundle</span>`:`<span class="badge b-${d.confidence}">${d.confidence}</span>`;
+  const lotChip=id=>`<span class="lotid" data-lot="${id}" title="Copy lot ID">#${id}</span>`;
+  let fieldRows;
+  if(d.is_bundle){
+    const refs=(d.refs||[]).map(id=>`<span class="lotref" data-lot="${id}">#${id}</span>`).join(' ');
+    fieldRows=[
+      ['Lot #', lotChip(d.lot_id)],
+      ['Type', badge],
+      ['Total price (sum of items)', money(d.ebay_price_median)],
+      ['Total net (sum of items)', `<span class="${num(d.net_ebay)<0?'neg':'pos'}">${money(d.net_ebay)}</span>`],
+      ['Contains ('+(d.refs||[]).length+')', `<div class="refs">${refs}</div>`],
+      ['Photos', d._imgs.length],
+    ];
+  } else {
+    fieldRows=[
+      ['Lot #', lotChip(d.lot_id)],
+      ['Confidence', badge],
+      ['eBay price (sold median)', money(d.ebay_price_median)],
+      ['Price comps (n)', d.ebay_price_n||'—'],
+      ['Prior estimate', money(d.est_price_old)],
+      ['eBay shipping (median)', money(d.ship_ebay_usd)],
+      ['Shipping comps (n)', d.n_offers||'—'],
+      ['Est. shipping', money(d.ship_est_usd)],
+      ['Net (price − ship)', `<span class="${num(d.net_ebay)<0?'neg':'pos'}">${money(d.net_ebay)}</span>`],
+      ['Photos', d._imgs.length],
+    ];
+  }
+  const fields=fieldRows.map(([k,v])=>`<tr><th>${k}</th><td>${v}</td></tr>`).join('');
   const multi=d._imgs.length>1;
   const slides=d._imgs.map(im=>`<img class="d-slide" draggable="false" src="${IMG}${im}" alt="">`).join('');
   dBody.innerHTML=`
@@ -390,6 +410,8 @@ function closeDetail(fromPop){
   if(lotPushed){ lotPushed=false; history.back(); }              // pop our entry → Back-consistent
   else if(lotFromHash()!=null){ history.replaceState(null,'',location.pathname+location.search); } // deep-linked → clean hash
 }
+function openLot(id){ const idx=DATA.findIndex(d=>d.lot_id===+id); if(idx>=0) openDetail(idx); }
+dBody.addEventListener('click', e=>{ const r=e.target.closest('.lotref'); if(r){ e.stopPropagation(); openLot(r.dataset.lot); } });
 document.getElementById('dX').onclick=()=>closeDetail();
 detail.addEventListener('click', e=>{ if(e.target===detail) closeDetail(); });
 // Back/Forward: sync the modal to the URL hash (party-scout pattern)

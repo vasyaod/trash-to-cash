@@ -1,5 +1,5 @@
 {
- "total": 111,
+ "total": 112,
  "items": [
   {
    "lot_id": 64,
@@ -1046,10 +1046,7 @@
    "n_offers": 23,
    "net_ebay": -0.35,
    "images": [
-    "IMG20260626194610.jpg",
-    "IMG20260626194530.jpg",
-    "IMG20260626194602.jpg",
-    "IMG20260626195018.jpg"
+    "IMG20260626194610.jpg"
    ]
   },
   {
@@ -1725,6 +1722,49 @@
    "net_ebay": 0.31,
    "images": [
     "IMG20260626194135.jpg"
+   ]
+  },
+  {
+   "lot_id": 112,
+   "title": "Funko Pop Collection \u2014 23-Figure Group Lot",
+   "confidence": null,
+   "is_bundle": true,
+   "refs": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+   ],
+   "ebay_price_median": 359.93,
+   "ebay_price_n": null,
+   "est_price_old": null,
+   "ship_ebay_usd": null,
+   "ship_est_usd": null,
+   "n_offers": null,
+   "net_ebay": 168.0,
+   "images": [
+    "IMG20260626194530.jpg",
+    "IMG20260626194602.jpg",
+    "IMG20260626195018.jpg"
    ]
   }
  ]
