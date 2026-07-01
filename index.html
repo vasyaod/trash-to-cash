@@ -38,6 +38,8 @@
   .neg { color:var(--low); } .pos { color:var(--hi); }
   a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
   .muted { color:var(--mut); font-size:12px; }
+  .seller { margin-top:3px; }
+  .seller a { margin:0 1px; }
   .thumbwrap.lb, .imglink { cursor:pointer; }
   .imglink { color:var(--accent); } .imglink:hover { text-decoration:underline; }
   footer { color:var(--mut); font-size:12px; padding:0 24px 40px; }
@@ -197,7 +199,8 @@ function render(){
     return `<tr>
       <td>${thumb}</td>
       <td class="title">${esc(d.title)}
-        <div class="muted">${d._imgs.map((im,i)=>`<span class="lb imglink" data-imgs="${imgAttr}" data-idx="${i}">${i+1}</span>`).join(' · ')}</div></td>
+        <div class="muted">📷 ${d._imgs.map((im,i)=>`<span class="lb imglink" data-imgs="${imgAttr}" data-idx="${i}">${i+1}</span>`).join(' · ')}</div>
+        ${sellerLinks(d.title)}</td>
       <td data-label="">${badge(d.confidence)}</td>
       <td class="num" data-label="Price $">${fmt(d.ebay_price_median)}</td>
       <td class="num muted col-sm-hide" data-label="Comps">${d.ebay_price_n||''}</td>
@@ -209,6 +212,14 @@ function render(){
   }).join('');
 }
 const esc=s=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+// links to comparable listings from other sellers, built from the item title
+function sellerLinks(title){
+  const t=encodeURIComponent(title);
+  return `<div class="muted seller">🛒 other sellers:
+    <a href="https://www.ebay.com/sch/i.html?_nkw=${t}" target="_blank" rel="noopener">eBay</a> ·
+    <a href="https://www.ebay.com/sch/i.html?_nkw=${t}&LH_Sold=1&LH_Complete=1" target="_blank" rel="noopener">eBay sold</a> ·
+    <a href="https://www.google.com/search?tbm=shop&q=${t}" target="_blank" rel="noopener">Google</a></div>`;
+}
 const fmt=v=>{ const n=num(v); return n===null?'':n.toFixed(2); };
 
 document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{
