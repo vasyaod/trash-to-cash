@@ -159,7 +159,7 @@
       <th data-k="title" title="Item title, lot id (#), photo links and 'other sellers' search links. Click to sort A→Z.">Item</th>
       <th data-k="confidence" title="Confidence in the ID + pricing (high / med / low), based on comp count and match quality. Click to sort.">Conf</th>
       <th class="num" data-k="listing_price" title="Listing price — the price we actually list at on marketplaces. Manually settable; defaults to the eBay median. Click to sort.">List $</th>
-      <th class="num" data-k="ebay_price_median" title="Real eBay Sold/Completed median — the realized market price (not asking). Click to sort.">Price $</th>
+      <th class="num" data-k="ebay_price_median" title="Real eBay Sold/Completed median — the realized market price (not asking). Click to sort.">Est Price $</th>
       <th class="num" data-k="ebay_price_n" title="Number of eBay sold listings behind the price median (more = more reliable).">Comps</th>
       <th class="num" data-k="ship_ebay_usd" title="Real eBay charged-delivery median, Free-Shipping listings excluded (their postage is baked into price).">Ship $</th>
       <th class="num" data-k="n_offers" title="Number of paid shipping comps behind Ship $.">Ship n</th>
@@ -245,7 +245,7 @@ function render(){
         ${sellerLinks(d.title)}</td>
       <td data-label="">${badge(d)}</td>
       <td class="num" data-label="List $">${fmt(d.listing_price)}</td>
-      <td class="num" data-label="Price $">${fmt(d.ebay_price_median)}</td>
+      <td class="num" data-label="Est Price $">${fmt(d.ebay_price_median)}</td>
       <td class="num muted col-sm-hide" data-label="Comps">${d.ebay_price_n||''}</td>
       <td class="num" data-label="Ship $">${fmt(d.ship_ebay_usd)}</td>
       <td class="num muted col-sm-hide" data-label="Ship n">${d.n_offers||''}</td>
