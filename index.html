@@ -344,7 +344,7 @@ function openDetail(i, fromPop){
     fieldRows=[
       ['Lot #', lotChip(d.lot_id)],
       ['Type', badge],
-      ['List price', money(d.list_price)],
+      ['Listing price', money(d.listing_price)],
       ['Price (sum of items)', money(d.ebay_price_median)],
       ['Shipping (one package)', money(d.ship_ebay_usd)],
       ['Net (price − shipping)', `<span class="${num(d.net_ebay)<0?'neg':'pos'}">${money(d.net_ebay)}</span>`],
@@ -355,7 +355,7 @@ function openDetail(i, fromPop){
     fieldRows=[
       ['Lot #', lotChip(d.lot_id)],
       ['Confidence', badge],
-      ['List price', money(d.list_price)],
+      ['Listing price', money(d.listing_price)],
       ['eBay price (sold median)', money(d.ebay_price_median)],
       ['Price comps (n)', d.ebay_price_n||'—'],
       ['Prior estimate', money(d.est_price_old)],
