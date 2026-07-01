@@ -181,8 +181,10 @@ const IMG = 'img_small/';
 const num = v => { const n=parseFloat(v); return (v===null||v===''||isNaN(n))?null:n; };
 let DATA=[], sortK='net_ebay', sortDir=-1;
 
-fetch('catalog.json').then(r=>r.json()).then(items=>{
-  DATA=items.map((o,idx)=>{ o._imgs=Array.isArray(o.images)?o.images:[]; o._i=idx; return o; });
+let TOTAL=0;
+fetch('catalog.json').then(r=>r.json()).then(data=>{
+  TOTAL = data.total || (data.items||[]).length;
+  DATA=(data.items||[]).map((o,idx)=>{ o._imgs=Array.isArray(o.images)?o.images:[]; o._i=idx; return o; });
   renderStats(); render();
 });
 
@@ -298,6 +300,7 @@ function openDetail(i){
   const imgAttr=d._imgs.join(',');
   const badge=`<span class="badge b-${d.confidence}">${d.confidence}</span>`;
   const fields=[
+    ['Lot #', d.lot_id ?? '—'],
     ['Confidence', badge],
     ['eBay price (sold median)', money(d.ebay_price_median)],
     ['Price comps (n)', d.ebay_price_n||'—'],
