@@ -190,7 +190,7 @@ let TOTAL=0;
 fetch('catalog.json').then(r=>r.json()).then(data=>{
   TOTAL = data.total || (data.items||[]).length;
   DATA=(data.items||[]).map((o,idx)=>{ o._imgs=Array.isArray(o.images)?o.images:[]; o._i=idx; return o; });
-  renderStats(); render();
+  renderStats(); render(); openLotFromHash();
 });
 
 function renderStats(){
@@ -317,7 +317,9 @@ document.addEventListener('keydown', e=>{
 /* ---- item detail modal (all fields) ---- */
 const detail=document.getElementById('detail'), dBody=document.getElementById('dBody');
 const money=v=>{ const n=num(v); return n===null?'—':'$'+n.toFixed(2); };
-function openDetail(i){
+let lotPushed=false;
+function lotFromHash(){ const m=(location.hash||'').match(/^#lot-(\d+)$/); return m?+m[1]:null; }
+function openDetail(i, fromPop){
   const d=DATA[i]; if(!d) return;
   const imgAttr=d._imgs.join(',');
   const badge=`<span class="badge b-${d.confidence}">${d.confidence}</span>`;
@@ -348,6 +350,9 @@ function openDetail(i){
     ${sellerLinks(d.title)}`;
   detail.hidden=false; document.body.style.overflow='hidden';
   initDSlider(d._imgs);
+  if(!fromPop){                                   // reflect the open lot in the URL
+    lotPushed=true; history.pushState({lot:d.lot_id}, '', '#lot-'+d.lot_id);
+  }
 }
 /* inline image slider inside the detail modal (live-drag swipe + arrows + dots) */
 let dImgs=[], dIdx=0, dTrackEl=null, dDragged=false;
@@ -378,9 +383,23 @@ function initDSlider(imgs){
     if(drag<-th) dGo(dIdx+1); else if(drag>th) dGo(dIdx-1); else dShow(true); } };
   el.addEventListener('touchend',end,{passive:true}); el.addEventListener('touchcancel',end,{passive:true});
 }
-function closeDetail(){ detail.hidden=true; dBody.innerHTML=''; if(lb.hidden) document.body.style.overflow=''; }
-document.getElementById('dX').onclick=closeDetail;
+function closeDetail(fromPop){
+  detail.hidden=true; dBody.innerHTML=''; if(lb.hidden) document.body.style.overflow='';
+  if(fromPop){ lotPushed=false; return; }
+  if(lotPushed){ lotPushed=false; history.back(); }              // pop our entry → Back-consistent
+  else if(lotFromHash()!=null){ history.replaceState(null,'',location.pathname+location.search); } // deep-linked → clean hash
+}
+document.getElementById('dX').onclick=()=>closeDetail();
 detail.addEventListener('click', e=>{ if(e.target===detail) closeDetail(); });
+// Back/Forward: sync the modal to the URL hash (party-scout pattern)
+window.addEventListener('popstate', ()=>{
+  const id=lotFromHash();
+  if(id!=null){ const idx=DATA.findIndex(d=>d.lot_id===id); if(idx>=0){ openDetail(idx, true); return; } }
+  if(!detail.hidden) closeDetail(true);
+});
+// Deep-link on load: #lot-<id> opens that lot's modal
+function openLotFromHash(){ const id=lotFromHash(); if(id==null) return;
+  const idx=DATA.findIndex(d=>d.lot_id===id); if(idx>=0) openDetail(idx, true); }
 
 // touch swipe
 let tx=0, ty=0;
