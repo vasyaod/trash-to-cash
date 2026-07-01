@@ -60,6 +60,22 @@
     font-size:14px; vertical-align:top; }
   .d-fields th { color:var(--mut); font-weight:500; width:44%; white-space:nowrap; }
   .d-fields td { font-weight:600; }
+  /* inline slider in the detail modal */
+  .d-slider { position:relative; overflow:hidden; border-radius:10px; background:#0d0f13;
+    margin-bottom:12px; touch-action:pan-y; }
+  .d-track { display:flex; will-change:transform; }
+  .d-slide { min-width:100%; width:100%; height:300px; object-fit:contain; display:block;
+    user-select:none; -webkit-user-drag:none; cursor:zoom-in; }
+  .d-snav { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,.45);
+    color:#fff; border:none; width:40px; height:56px; font-size:30px; line-height:1; border-radius:8px;
+    cursor:pointer; z-index:2; }
+  .d-snav:hover { background:rgba(0,0,0,.7); }
+  .d-sprev { left:8px; } .d-snext { right:8px; }
+  .d-count { position:absolute; top:8px; right:10px; background:rgba(0,0,0,.55); color:#fff;
+    font-size:12px; padding:2px 8px; border-radius:12px; }
+  .d-dots { position:absolute; bottom:8px; left:0; right:0; display:flex; justify-content:center; gap:6px; }
+  .d-dot { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.4); cursor:pointer; }
+  .d-dot.on { background:#fff; }
   .imglink { color:var(--accent); } .imglink:hover { text-decoration:underline; }
   footer { color:var(--mut); font-size:12px; padding:0 24px 40px; }
   /* lightbox */
@@ -290,9 +306,15 @@ document.getElementById('lbPrev').onclick=lbPrev;
 document.getElementById('lbX').onclick=lbClose;
 lb.addEventListener('click', e=>{ if(e.target===lb || e.target.id==='lbStage') lbClose(); });
 document.addEventListener('keydown', e=>{
-  if(!detail.hidden && e.key==='Escape'){ closeDetail(); return; }
-  if(lb.hidden) return;
-  if(e.key==='Escape') lbClose(); else if(e.key==='ArrowRight') lbNext(); else if(e.key==='ArrowLeft') lbPrev(); });
+  if(!lb.hidden){ // fullscreen gallery has priority
+    if(e.key==='Escape') lbClose(); else if(e.key==='ArrowRight') lbNext(); else if(e.key==='ArrowLeft') lbPrev();
+    return; }
+  if(!detail.hidden){ // modal slider
+    if(e.key==='Escape') closeDetail();
+    else if(e.key==='ArrowRight' && dImgs.length>1) dGo(dIdx+1);
+    else if(e.key==='ArrowLeft' && dImgs.length>1) dGo(dIdx-1);
+  }
+});
 /* ---- item detail modal (all fields) ---- */
 const detail=document.getElementById('detail'), dBody=document.getElementById('dBody');
 const money=v=>{ const n=num(v); return n===null?'—':'$'+n.toFixed(2); };
@@ -311,21 +333,54 @@ function openDetail(i){
     ['Net (price − ship)', `<span class="${num(d.net_ebay)<0?'neg':'pos'}">${money(d.net_ebay)}</span>`],
     ['Photos', d.n_images||d._imgs.length],
   ].map(([k,v])=>`<tr><th>${k}</th><td>${v}</td></tr>`).join('');
-  const hero=d._imgs[0];
+  const multi=d._imgs.length>1;
+  const slides=d._imgs.map(im=>`<img class="d-slide" draggable="false" src="${IMG}${im}" alt="">`).join('');
   dBody.innerHTML=`
     <div class="d-title">${esc(d.title)}</div>
-    ${hero?`<img class="d-hero lb" data-imgs="${imgAttr}" data-idx="0" src="${IMG}${hero}" alt="">`:''}
-    ${d._imgs.length>1?`<div class="d-thumbs">${d._imgs.map((im,j)=>`<img class="lb" data-imgs="${imgAttr}" data-idx="${j}" loading="lazy" src="${IMG}${im}" alt="">`).join('')}</div>`:''}
+    <div class="d-slider" id="dSlider">
+      <div class="d-track" id="dTrack">${slides}</div>
+      ${multi?`<button class="d-snav d-sprev" id="dPrev" aria-label="Previous">&#8249;</button>
+        <button class="d-snav d-snext" id="dNext" aria-label="Next">&#8250;</button>
+        <div class="d-count" id="dCount"></div>
+        <div class="d-dots" id="dDots">${d._imgs.map((_,j)=>`<span class="d-dot" data-i="${j}"></span>`).join('')}</div>`:''}
+    </div>
     <table class="d-fields"><tbody>${fields}</tbody></table>
     ${sellerLinks(d.title)}`;
   detail.hidden=false; document.body.style.overflow='hidden';
+  initDSlider(d._imgs);
+}
+/* inline image slider inside the detail modal (live-drag swipe + arrows + dots) */
+let dImgs=[], dIdx=0, dTrackEl=null, dDragged=false;
+function dShow(anim){
+  if(!dTrackEl) return;
+  dTrackEl.style.transition = anim===false ? 'none' : 'transform .25s ease';
+  dTrackEl.style.transform = `translateX(${-dIdx*100}%)`;
+  const c=document.getElementById('dCount'); if(c) c.textContent=(dIdx+1)+' / '+dImgs.length;
+  document.querySelectorAll('#dDots .d-dot').forEach((dot,j)=>dot.classList.toggle('on', j===dIdx));
+}
+function dGo(i){ dIdx=Math.max(0, Math.min(dImgs.length-1, i)); dShow(true); }
+function initDSlider(imgs){
+  dImgs=imgs; dIdx=0; dTrackEl=document.getElementById('dTrack'); dShow(false);
+  if(imgs.length<2){ if(dTrackEl) dTrackEl.onclick=()=>lbOpen(dImgs,0); return; }
+  document.getElementById('dPrev').onclick=()=>dGo(dIdx-1);
+  document.getElementById('dNext').onclick=()=>dGo(dIdx+1);
+  document.querySelectorAll('#dDots .d-dot').forEach(dot=>dot.onclick=()=>dGo(+dot.dataset.i));
+  dTrackEl.onclick=()=>{ if(!dDragged) lbOpen(dImgs, dIdx); };   // tap = fullscreen zoom
+  const el=document.getElementById('dSlider');
+  let x0=0,y0=0,w=1,dir=0,drag=0,active=false;
+  el.addEventListener('touchstart',e=>{const t=e.touches[0];x0=t.clientX;y0=t.clientY;w=el.offsetWidth||1;dir=0;drag=0;active=true;dDragged=false;dTrackEl.style.transition='none';},{passive:true});
+  el.addEventListener('touchmove',e=>{ if(!active)return; const t=e.touches[0];const dx=t.clientX-x0,dy=t.clientY-y0;
+    if(dir===0){ if(Math.abs(dx)<6&&Math.abs(dy)<6)return; dir=Math.abs(dx)>Math.abs(dy)?1:-1; }
+    if(dir!==1)return; e.preventDefault(); dDragged=true; let dd=dx;
+    if((dIdx===0&&dd>0)||(dIdx===dImgs.length-1&&dd<0)) dd*=0.32; drag=dd;
+    dTrackEl.style.transform=`translateX(calc(${-dIdx*100}% + ${drag}px))`; },{passive:false});
+  const end=()=>{ if(!active)return; active=false; if(dir===1){ const th=w*0.2;
+    if(drag<-th) dGo(dIdx+1); else if(drag>th) dGo(dIdx-1); else dShow(true); } };
+  el.addEventListener('touchend',end,{passive:true}); el.addEventListener('touchcancel',end,{passive:true});
 }
 function closeDetail(){ detail.hidden=true; dBody.innerHTML=''; if(lb.hidden) document.body.style.overflow=''; }
 document.getElementById('dX').onclick=closeDetail;
 detail.addEventListener('click', e=>{ if(e.target===detail) closeDetail(); });
-// clicks on hero/thumbs inside the modal open the photo gallery
-dBody.addEventListener('click', e=>{ const el=e.target.closest('.lb'); if(!el) return;
-  const imgs=(el.dataset.imgs||'').split(',').filter(Boolean); if(imgs.length) lbOpen(imgs, +el.dataset.idx||0); });
 
 // touch swipe
 let tx=0, ty=0;
