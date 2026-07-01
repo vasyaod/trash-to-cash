@@ -60,7 +60,15 @@
   @media (max-width:640px){ .lb-nav{ width:44px; height:64px; font-size:32px; opacity:.85; } }
   /* mobile: turn the wide table into stacked cards (no horizontal scroll) */
   @media (max-width:640px){
-    header { padding:16px 14px 10px; }
+    /* header scrolls away (not pinned) so the list gets the screen; compact stats */
+    header { position:static; padding:12px 14px 8px; }
+    h1 { font-size:17px; margin:0; }
+    .sub { font-size:11.5px; margin-top:2px; }
+    .stats { gap:6px; margin-top:8px; }
+    .stat { padding:4px 9px; border-radius:8px; }
+    .stat b { font-size:14px; } .stat span { font-size:10px; }
+    .controls { margin-top:8px; gap:8px; }
+    input[type=search], select { padding:7px 9px; font-size:13px; }
     main { padding:8px 0 60px; }
     thead { display:none; }
     table, tbody, tr, td { display:block; }
