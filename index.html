@@ -91,20 +91,22 @@
     .controls { margin-top:8px; gap:8px; }
     input[type=search], select { padding:7px 9px; font-size:13px; }
     main { padding:8px 0 60px; }
-    thead { display:none; }
-    table, tbody, tr, td { display:block; }
-    tr { position:relative; border:1px solid var(--line); border-radius:12px;
+    #tbl thead { display:none; }
+    #tbl, #tbl tbody, #tbl tr, #tbl td { display:block; }
+    #tbl tr { position:relative; border:1px solid var(--line); border-radius:12px;
          margin:10px 12px; padding:12px 12px 12px 96px; min-height:88px; }
-    tr:hover td { background:none; }
-    td { border:none; padding:2px 0; text-align:left !important; }
-    td:first-child { position:absolute; left:12px; top:12px; padding:0; }
-    .thumb { width:72px; height:72px; }
-    .col-sm-hide { display:none; }
-    td.title { font-size:15px; margin-bottom:2px; max-width:none; }
-    td[data-label="Price $"], td[data-label="Ship $"], td[data-label="Net $"] {
+    #tbl tr:hover td { background:none; }
+    #tbl td { border:none; padding:2px 0; text-align:left !important; }
+    #tbl td:first-child { position:absolute; left:12px; top:12px; padding:0; }
+    #tbl .thumb { width:72px; height:72px; }
+    #tbl .col-sm-hide { display:none; }
+    #tbl td.title { font-size:15px; margin-bottom:2px; max-width:none; }
+    #tbl td[data-label="Price $"], #tbl td[data-label="Ship $"], #tbl td[data-label="Net $"] {
       display:inline-block; margin-right:16px; font-size:14px; }
-    td[data-label]:not([data-label=""])::before {
+    #tbl td[data-label]:not([data-label=""])::before {
       content:attr(data-label) " "; color:var(--mut); font-weight:400; }
+    /* detail modal's field table stays a clean 2-column layout */
+    .d-box { max-width:none; }
   }
 </style>
 </head>
