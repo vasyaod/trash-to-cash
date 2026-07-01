@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trash to Cash — Catalog</title>
+<style>
+  :root { --bg:#0f1115; --card:#181b22; --line:#272b34; --fg:#e6e8ec; --mut:#9aa1ad;
+          --hi:#22c55e; --med:#eab308; --low:#ef4444; --accent:#3b82f6; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+  header { padding:20px 24px 12px; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); z-index:5; }
+  h1 { margin:0 0 4px; font-size:20px; }
+  .sub { color:var(--mut); font-size:13px; }
+  .stats { display:flex; flex-wrap:wrap; gap:16px; margin-top:12px; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 14px; }
+  .stat b { font-size:18px; } .stat span { color:var(--mut); font-size:12px; display:block; }
+  .controls { display:flex; gap:12px; flex-wrap:wrap; margin-top:14px; align-items:center; }
+  input[type=search], select { background:var(--card); border:1px solid var(--line); color:var(--fg);
+          border-radius:8px; padding:8px 10px; font-size:14px; }
+  input[type=search] { min-width:240px; flex:1; }
+  main { padding:16px 24px 60px; }
+  table { border-collapse:collapse; width:100%; }
+  th,td { padding:8px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:middle; }
+  th { position:sticky; top:0; color:var(--mut); font-size:12px; text-transform:uppercase; letter-spacing:.04em;
+       cursor:pointer; user-select:none; background:var(--bg); white-space:nowrap; }
+  th.num, td.num { text-align:right; }
+  tr:hover td { background:#12151b; }
+  .thumb { width:60px; height:60px; object-fit:cover; border-radius:8px; border:1px solid var(--line); background:#222; display:block; }
+  .thumbwrap { position:relative; display:inline-block; }
+  .imgcount { position:absolute; right:-6px; bottom:-6px; background:var(--accent); color:#fff; font-size:10px;
+              border-radius:10px; padding:1px 6px; border:2px solid var(--bg); }
+  .title { font-weight:600; max-width:340px; }
+  .badge { font-size:11px; font-weight:700; padding:2px 8px; border-radius:20px; text-transform:uppercase; }
+  .b-high { background:rgba(34,197,94,.15); color:var(--hi); }
+  .b-med  { background:rgba(234,179,8,.15); color:var(--med); }
+  .b-low  { background:rgba(239,68,68,.15); color:var(--low); }
+  .neg { color:var(--low); } .pos { color:var(--hi); }
+  a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+  .muted { color:var(--mut); font-size:12px; }
+  footer { color:var(--mut); font-size:12px; padding:0 24px 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Trash to Cash — Resale Catalog</h1>
+  <div class="sub">Prices from real eBay Sold-listing medians · shipping from real eBay comps.
+    <a href="README.md">README</a> · <a href="catalog.csv">catalog.csv</a></div>
+  <div class="stats" id="stats"></div>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Filter by title…">
+    <select id="conf">
+      <option value="">All confidence</option>
+      <option value="high">high</option><option value="med">med</option><option value="low">low</option>
+    </select>
+    <span class="muted" id="count"></span>
+  </div>
+</header>
+<main>
+  <table id="tbl">
+    <thead><tr>
+      <th>Photo</th>
+      <th data-k="title">Item</th>
+      <th data-k="confidence">Conf</th>
+      <th class="num" data-k="ebay_price_median">Price $</th>
+      <th class="num" data-k="ebay_price_n">Comps</th>
+      <th class="num" data-k="ship_ebay_usd">Ship $</th>
+      <th class="num" data-k="n_offers">Ship n</th>
+      <th class="num" data-k="net_ebay">Net $</th>
+      <th class="num" data-k="n_images">Imgs</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</main>
+<footer>Static page — reads <code>catalog.csv</code> at load and links thumbnails from <code>img_small/</code>. No build step.</footer>
+
+<script>
+const IMG = 'img_small/';
+// minimal RFC-4180 CSV parser (handles quoted fields, commas, embedded newlines)
+function parseCSV(text){
+  const rows=[]; let row=[], field='', i=0, q=false;
+  while(i<text.length){
+    const c=text[i];
+    if(q){
+      if(c==='"'){ if(text[i+1]==='"'){field+='"'; i++;} else q=false; }
+      else field+=c;
+    } else {
+      if(c==='"') q=true;
+      else if(c===','){ row.push(field); field=''; }
+      else if(c==='\n'){ row.push(field); rows.push(row); row=[]; field=''; }
+      else if(c==='\r'){}
+      else field+=c;
+    }
+    i++;
+  }
+  if(field.length||row.length){ row.push(field); rows.push(row); }
+  return rows;
+}
+const num = v => { const n=parseFloat(v); return isNaN(n)?null:n; };
+let DATA=[], sortK='net_ebay', sortDir=-1;
+
+fetch('catalog.csv').then(r=>r.text()).then(txt=>{
+  const rows=parseCSV(txt).filter(r=>r.length>1);
+  const head=rows.shift();
+  DATA=rows.map(r=>{ const o={}; head.forEach((h,j)=>o[h]=r[j]);
+    o._imgs=(o.images||'').split(';').map(s=>s.trim()).filter(Boolean);
+    return o; });
+  renderStats(); render();
+});
+
+function renderStats(){
+  const gross=DATA.reduce((s,d)=>s+(num(d.ebay_price_median)||0),0);
+  const ship =DATA.reduce((s,d)=>s+(num(d.ship_ebay_usd)|| num(d.ship_est_usd)||0),0);
+  const net  =DATA.reduce((s,d)=>s+(num(d.net_ebay)||0),0);
+  document.getElementById('stats').innerHTML =
+    stat(DATA.length,'items') + stat('$'+Math.round(gross),'gross (eBay median)')
+    + stat('$'+Math.round(ship),'shipping') + stat('$'+Math.round(net),'net');
+}
+const stat=(b,s)=>`<div class="stat"><b>${b}</b><span>${s}</span></div>`;
+
+function render(){
+  const q=document.getElementById('q').value.toLowerCase();
+  const cf=document.getElementById('conf').value;
+  let list=DATA.filter(d=>(!cf||d.confidence===cf) && d.title.toLowerCase().includes(q));
+  list.sort((a,b)=>{
+    let x=a[sortK], y=b[sortK], nx=num(x), ny=num(y);
+    if(nx!==null&&ny!==null){ x=nx; y=ny; } else { x=(x||'').toLowerCase(); y=(y||'').toLowerCase(); }
+    return x<y?-1*sortDir : x>y?1*sortDir : 0;
+  });
+  document.getElementById('count').textContent = list.length+' / '+DATA.length+' shown';
+  const badge=c=>`<span class="badge b-${c}">${c}</span>`;
+  document.getElementById('rows').innerHTML = list.map(d=>{
+    const first=d._imgs[0];
+    const net=num(d.net_ebay);
+    const thumb = first
+      ? `<a class="thumbwrap" href="${IMG}${first}" target="_blank" title="Open photo">
+           <img class="thumb" loading="lazy" src="${IMG}${first}" alt="">
+           ${d._imgs.length>1?`<span class="imgcount">${d._imgs.length}</span>`:''}</a>`
+      : '';
+    return `<tr>
+      <td>${thumb}</td>
+      <td class="title">${esc(d.title)}
+        <div class="muted">${d._imgs.map((im,i)=>`<a href="${IMG}${im}" target="_blank">${i+1}</a>`).join(' · ')}</div></td>
+      <td>${badge(d.confidence)}</td>
+      <td class="num">${fmt(d.ebay_price_median)}</td>
+      <td class="num muted">${d.ebay_price_n||''}</td>
+      <td class="num">${fmt(d.ship_ebay_usd)}</td>
+      <td class="num muted">${d.n_offers||''}</td>
+      <td class="num ${net<0?'neg':'pos'}">${fmt(d.net_ebay)}</td>
+      <td class="num muted">${d.n_images||d._imgs.length}</td>
+    </tr>`;
+  }).join('');
+}
+const esc=s=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const fmt=v=>{ const n=num(v); return n===null?'':n.toFixed(2); };
+
+document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{
+  const k=th.dataset.k;
+  if(sortK===k) sortDir*=-1; else { sortK=k; sortDir = (k==='title'||k==='confidence')?1:-1; }
+  render();
+});
+document.getElementById('q').oninput=render;
+document.getElementById('conf').onchange=render;
+</script>
+</body>
+</html>
