@@ -196,8 +196,8 @@ const IMG = 'img_small/';
 const num = v => { const n=parseFloat(v); return (v===null||v===''||isNaN(n))?null:n; };
 // per-marketplace publish state helpers (see MODEL.md `marketplaces`)
 const ebayMp = d => (d.marketplaces && d.marketplaces.ebay) || null;
-const ebayUrl = mp => { if(!mp||!mp.reference) return null;
-  const r=String(mp.reference); return /^https?:|\/itm\//.test(r)?r:('https://www.ebay.com/itm/'+r); };
+const ebayUrl = mp => { if(!mp||!mp.ref) return null;
+  const r=String(mp.ref); return /^https?:|\/itm\//.test(r)?r:('https://www.ebay.com/itm/'+r); };
 let DATA=[], sortK='net_ebay', sortDir=-1;
 
 let TOTAL=0;
@@ -364,6 +364,7 @@ function openDetail(i, fromPop){
     fieldRows=[
       ['Lot #', lotChip(d.lot_id)],
       ['Confidence', badge],
+      ['Condition', d.condition?esc(d.condition):'—'],
       ['Listing price', money(d.listing_price)],
       ['eBay price (sold median)', money(d.ebay_price_median)],
       ['Price comps (n)', d.ebay_price_n||'—'],
