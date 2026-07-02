@@ -384,7 +384,7 @@
    "marketplaces": {
     "ebay": {
      "status": "error",
-     "error": "Find-a-match step required choosing a category (eBay could not auto-categorize this Mibro robot; offered Toys & Hobbies > Robots with a None-selected/Done picker). The automation does not yet handle category selection, so it never reached the listing form.",
+     "error": "Category auto-selection now works (picks Toys & Hobbies > Robots), but after selecting, the flow still does not advance past Find-a-match to the listing form \u2014 the category dialog needs a different confirm/close step or Continue-without-match re-enable timing. Title field never appears. Needs more work on the category-dialog finalize.",
      "ref": null
     }
    },
