@@ -194,6 +194,10 @@
 <script>
 const IMG = 'img_small/';
 const num = v => { const n=parseFloat(v); return (v===null||v===''||isNaN(n))?null:n; };
+// per-marketplace publish state helpers (see MODEL.md `marketplaces`)
+const ebayMp = d => (d.marketplaces && d.marketplaces.ebay) || null;
+const ebayUrl = mp => { if(!mp||!mp.reference) return null;
+  const r=String(mp.reference); return /^https?:|\/itm\//.test(r)?r:('https://www.ebay.com/itm/'+r); };
 let DATA=[], sortK='net_ebay', sortDir=-1;
 
 let TOTAL=0;
@@ -244,7 +248,7 @@ function render(){
     return `<tr data-i="${d._i}" class="card">
       <td>${thumb}</td>
       <td class="title"><span class="lotid" data-lot="${d.lot_id}" title="Copy lot ID">#${d.lot_id}</span> ${esc(d.title)}
-        <div class="muted">📷 ${d._imgs.map((im,i)=>`<span class="lb imglink" data-imgs="${imgAttr}" data-idx="${i}">${i+1}</span>`).join(' · ')}${d.ebay_url?` · <a href="${d.ebay_url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">on eBay ↗</a>`:''}</div>
+        <div class="muted">📷 ${d._imgs.map((im,i)=>`<span class="lb imglink" data-imgs="${imgAttr}" data-idx="${i}">${i+1}</span>`).join(' · ')}${(()=>{const u=ebayUrl(ebayMp(d));return u?` · <a href="${u}" target="_blank" rel="noopener" onclick="event.stopPropagation()">on eBay ↗</a>`:'';})()}</div>
         ${sellerLinks(d.title)}</td>
       <td data-label="">${badge(d)}</td>
       <td class="num" data-label="List $">${fmt(d.listing_price)}</td>
@@ -371,7 +375,12 @@ function openDetail(i, fromPop){
       ['Photos', d._imgs.length],
     ];
   }
-  if(d.ebay_url){ fieldRows.splice(2,0,['eBay listing', `<a href="${d.ebay_url}" target="_blank" rel="noopener">View on eBay ↗</a>`]); }
+  const _mp=ebayMp(d), _mu=ebayUrl(_mp);
+  if(_mp){
+    const cell = _mu ? `<a href="${_mu}" target="_blank" rel="noopener">View on eBay ↗</a>`
+                     : (_mp.status==='listed'?'listed (id pending)':(_mp.status||''));
+    fieldRows.splice(2,0,[`eBay (${_mp.status||'—'})`, _mp.error?`<span class="neg">${esc(_mp.error)}</span>`:cell]);
+  }
   const fields=fieldRows.map(([k,v])=>`<tr><th>${k}</th><td>${v}</td></tr>`).join('');
   const multi=d._imgs.length>1;
   const slides=d._imgs.map(im=>`<img class="d-slide" draggable="false" src="${IMG}${im}" alt="">`).join('');

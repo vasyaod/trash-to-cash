@@ -13,8 +13,7 @@
    "ship_est_usd": 8,
    "n_offers": 26,
    "net_ebay": 29.26,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201044.jpg"
    ]
@@ -31,8 +30,7 @@
    "ship_est_usd": 8,
    "n_offers": 28,
    "net_ebay": 27.11,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194954.jpg"
    ]
@@ -49,8 +47,7 @@
    "ship_est_usd": 4,
    "n_offers": 14,
    "net_ebay": 26.16,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195413.jpg",
     "IMG20260626195406.jpg"
@@ -68,8 +65,7 @@
    "ship_est_usd": 8,
    "n_offers": 27,
    "net_ebay": 22.04,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194627.jpg"
    ]
@@ -86,8 +82,7 @@
    "ship_est_usd": 10,
    "n_offers": 16,
    "net_ebay": 13.66,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626202824.jpg",
     "IMG20260626202829.jpg"
@@ -105,8 +100,7 @@
    "ship_est_usd": 8,
    "n_offers": 29,
    "net_ebay": 8.4,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194653.jpg"
    ]
@@ -123,8 +117,7 @@
    "ship_est_usd": 8,
    "n_offers": 4,
    "net_ebay": 8.4,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626202208.jpg"
    ]
@@ -141,8 +134,7 @@
    "ship_est_usd": 8,
    "n_offers": 33,
    "net_ebay": 3.93,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194810.jpg"
    ]
@@ -159,8 +151,7 @@
    "ship_est_usd": 8,
    "n_offers": 30,
    "net_ebay": 1.86,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194916.jpg"
    ]
@@ -177,8 +168,7 @@
    "ship_est_usd": 4,
    "n_offers": 22,
    "net_ebay": 3.76,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194728.jpg"
    ]
@@ -195,8 +185,7 @@
    "ship_est_usd": 6,
    "n_offers": 23,
    "net_ebay": 91.6,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626193734.jpg"
    ]
@@ -213,8 +202,7 @@
    "ship_est_usd": 10,
    "n_offers": 2,
    "net_ebay": 88.85,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204024.jpg",
     "IMG20260626204034.jpg"
@@ -232,8 +220,7 @@
    "ship_est_usd": 9,
    "n_offers": 22,
    "net_ebay": 87.28,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626202009.jpg",
     "IMG20260626202024.jpg",
@@ -252,8 +239,7 @@
    "ship_est_usd": 10,
    "n_offers": 32,
    "net_ebay": 84.05,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201314.jpg",
     "IMG20260626201317.jpg"
@@ -271,8 +257,13 @@
    "ship_est_usd": 6,
    "n_offers": 30,
    "net_ebay": 88.01,
-   "ebay_url": "https://www.ebay.com/itm/398133159288",
-   "ebay_item_id": "398133159288",
+   "marketplaces": {
+    "ebay": {
+     "status": "listed",
+     "error": null,
+     "reference": "398133159288"
+    }
+   },
    "images": [
     "IMG20260626195446.jpg",
     "IMG20260626195500.jpg"
@@ -290,8 +281,7 @@
    "ship_est_usd": 15,
    "n_offers": 14,
    "net_ebay": 77.53,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626202303.jpg"
    ]
@@ -308,8 +298,13 @@
    "ship_est_usd": 10,
    "n_offers": 19,
    "net_ebay": 62.07,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "listed",
+     "error": null,
+     "reference": null
+    }
+   },
    "images": [
     "IMG20260626203602.jpg",
     "IMG20260626203608.jpg"
@@ -327,8 +322,7 @@
    "ship_est_usd": 10,
    "n_offers": 28,
    "net_ebay": 52.2,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626203942.jpg",
     "IMG20260626203948.jpg",
@@ -347,8 +341,7 @@
    "ship_est_usd": 4,
    "n_offers": 34,
    "net_ebay": 48.98,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204543.jpg",
     "IMG20260626204459.jpg",
@@ -369,8 +362,7 @@
    "ship_est_usd": 9,
    "n_offers": 16,
    "net_ebay": 44.82,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626203728.jpg"
    ]
@@ -387,8 +379,7 @@
    "ship_est_usd": 10,
    "n_offers": 24,
    "net_ebay": 41.75,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204627.jpg",
     "IMG20260626204618.jpg",
@@ -407,8 +398,7 @@
    "ship_est_usd": 4,
    "n_offers": 29,
    "net_ebay": 37.48,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204329.jpg"
    ]
@@ -425,8 +415,7 @@
    "ship_est_usd": 9,
    "n_offers": 16,
    "net_ebay": 35.33,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626202845.jpg",
     "IMG20260626202849.jpg"
@@ -444,8 +433,7 @@
    "ship_est_usd": 9,
    "n_offers": 31,
    "net_ebay": 27.24,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200342.jpg",
     "IMG20260626200329.jpg",
@@ -464,8 +452,7 @@
    "ship_est_usd": 9,
    "n_offers": 31,
    "net_ebay": 25.55,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200432.jpg"
    ]
@@ -482,8 +469,7 @@
    "ship_est_usd": 9,
    "n_offers": 15,
    "net_ebay": 24.63,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201402.jpg"
    ]
@@ -500,8 +486,7 @@
    "ship_est_usd": 4,
    "n_offers": 8,
    "net_ebay": 22.49,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200908.jpg"
    ]
@@ -518,8 +503,7 @@
    "ship_est_usd": 6,
    "n_offers": 30,
    "net_ebay": 21.74,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194002.jpg",
     "IMG20260626194007.jpg"
@@ -537,8 +521,7 @@
    "ship_est_usd": 10,
    "n_offers": 28,
    "net_ebay": 18.49,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204156.jpg"
    ]
@@ -555,8 +538,7 @@
    "ship_est_usd": 9,
    "n_offers": 13,
    "net_ebay": 18.79,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194224.jpg"
    ]
@@ -573,8 +555,7 @@
    "ship_est_usd": 10,
    "n_offers": 22,
    "net_ebay": 15.72,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204052.jpg"
    ]
@@ -591,8 +572,7 @@
    "ship_est_usd": 15,
    "n_offers": 14,
    "net_ebay": 18.04,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194453.jpg",
     "IMG20260626194503.jpg",
@@ -611,8 +591,7 @@
    "ship_est_usd": 9,
    "n_offers": 20,
    "net_ebay": 15.28,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626203702.jpg"
    ]
@@ -629,8 +608,7 @@
    "ship_est_usd": 9,
    "n_offers": 20,
    "net_ebay": 16.65,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201847.jpg"
    ]
@@ -647,8 +625,7 @@
    "ship_est_usd": 9,
    "n_offers": 22,
    "net_ebay": 14.76,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200107.jpg"
    ]
@@ -665,8 +642,7 @@
    "ship_est_usd": 9,
    "n_offers": 24,
    "net_ebay": 18.02,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200125.jpg"
    ]
@@ -683,8 +659,7 @@
    "ship_est_usd": 8,
    "n_offers": 24,
    "net_ebay": 13.72,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194801.jpg"
    ]
@@ -701,8 +676,7 @@
    "ship_est_usd": 9,
    "n_offers": 30,
    "net_ebay": 13.2,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200419.jpg"
    ]
@@ -719,8 +693,7 @@
    "ship_est_usd": 15,
    "n_offers": 34,
    "net_ebay": 11.81,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200141.jpg"
    ]
@@ -737,8 +710,7 @@
    "ship_est_usd": 6,
    "n_offers": 15,
    "net_ebay": 14.48,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626193613.jpg"
    ]
@@ -755,8 +727,7 @@
    "ship_est_usd": 15,
    "n_offers": 10,
    "net_ebay": 13.43,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626193509.jpg",
     "IMG20260626193514.jpg",
@@ -775,8 +746,7 @@
    "ship_est_usd": 8,
    "n_offers": 29,
    "net_ebay": 12.04,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194701.jpg"
    ]
@@ -793,8 +763,7 @@
    "ship_est_usd": 10,
    "n_offers": 20,
    "net_ebay": 10.38,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626202934.jpg"
    ]
@@ -811,8 +780,7 @@
    "ship_est_usd": 9,
    "n_offers": 32,
    "net_ebay": 10.22,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195220.jpg",
     "IMG20260626195200.jpg"
@@ -830,8 +798,7 @@
    "ship_est_usd": 4,
    "n_offers": 27,
    "net_ebay": 11.34,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626203824.jpg",
     "IMG20260626203849.jpg",
@@ -850,8 +817,7 @@
    "ship_est_usd": 10,
    "n_offers": 27,
    "net_ebay": 8.63,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626202452.jpg"
    ]
@@ -868,8 +834,7 @@
    "ship_est_usd": 8,
    "n_offers": 25,
    "net_ebay": 10.1,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194850.jpg"
    ]
@@ -886,8 +851,7 @@
    "ship_est_usd": 6,
    "n_offers": 15,
    "net_ebay": 12.0,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201159.jpg"
    ]
@@ -904,8 +868,7 @@
    "ship_est_usd": 8,
    "n_offers": 32,
    "net_ebay": 8.22,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194637.jpg"
    ]
@@ -922,8 +885,7 @@
    "ship_est_usd": 8,
    "n_offers": 29,
    "net_ebay": 9.99,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194924.jpg"
    ]
@@ -940,8 +902,7 @@
    "ship_est_usd": 9,
    "n_offers": 23,
    "net_ebay": 6.87,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200300.jpg"
    ]
@@ -958,8 +919,7 @@
    "ship_est_usd": 6,
    "n_offers": 24,
    "net_ebay": 5.85,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626193700.jpg",
     "IMG20260626193640.jpg"
@@ -977,8 +937,7 @@
    "ship_est_usd": 9,
    "n_offers": 10,
    "net_ebay": 8.86,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195927.jpg"
    ]
@@ -995,8 +954,7 @@
    "ship_est_usd": 8,
    "n_offers": 23,
    "net_ebay": 6.9,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194709.jpg"
    ]
@@ -1013,8 +971,7 @@
    "ship_est_usd": 6,
    "n_offers": 24,
    "net_ebay": 8.43,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200247.jpg"
    ]
@@ -1031,8 +988,7 @@
    "ship_est_usd": 9,
    "n_offers": 16,
    "net_ebay": 5.17,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195832.jpg"
    ]
@@ -1049,8 +1005,7 @@
    "ship_est_usd": 9,
    "n_offers": 25,
    "net_ebay": 6.2,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626193553.jpg"
    ]
@@ -1067,8 +1022,7 @@
    "ship_est_usd": 8,
    "n_offers": 20,
    "net_ebay": 5.43,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194934.jpg"
    ]
@@ -1085,8 +1039,7 @@
    "ship_est_usd": 9,
    "n_offers": 24,
    "net_ebay": 6.0,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200617.jpg"
    ]
@@ -1103,8 +1056,7 @@
    "ship_est_usd": 9,
    "n_offers": 22,
    "net_ebay": 5.01,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201145.jpg"
    ]
@@ -1121,8 +1073,7 @@
    "ship_est_usd": 8,
    "n_offers": 19,
    "net_ebay": 3.9,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194645.jpg"
    ]
@@ -1139,8 +1090,7 @@
    "ship_est_usd": 8,
    "n_offers": 22,
    "net_ebay": 4.54,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194858.jpg"
    ]
@@ -1157,8 +1107,7 @@
    "ship_est_usd": 8,
    "n_offers": 21,
    "net_ebay": 1.01,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194907.jpg"
    ]
@@ -1175,8 +1124,7 @@
    "ship_est_usd": 8,
    "n_offers": 22,
    "net_ebay": 1.11,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194840.jpg"
    ]
@@ -1193,8 +1141,7 @@
    "ship_est_usd": 8,
    "n_offers": 29,
    "net_ebay": -0.04,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194718.jpg"
    ]
@@ -1211,8 +1158,7 @@
    "ship_est_usd": 4,
    "n_offers": 22,
    "net_ebay": 4.74,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195936.jpg"
    ]
@@ -1229,8 +1175,7 @@
    "ship_est_usd": 6,
    "n_offers": 21,
    "net_ebay": 2.6,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194602.jpg"
    ]
@@ -1247,8 +1192,7 @@
    "ship_est_usd": 4,
    "n_offers": 4,
    "net_ebay": 1.79,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201453.jpg"
    ]
@@ -1265,8 +1209,7 @@
    "ship_est_usd": 8,
    "n_offers": 23,
    "net_ebay": -0.35,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194610.jpg"
    ]
@@ -1283,8 +1226,7 @@
    "ship_est_usd": 4,
    "n_offers": 28,
    "net_ebay": 0.14,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194619.jpg"
    ]
@@ -1301,8 +1243,7 @@
    "ship_est_usd": 8,
    "n_offers": 23,
    "net_ebay": 0.5,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194942.jpg"
    ]
@@ -1319,8 +1260,7 @@
    "ship_est_usd": 6,
    "n_offers": 27,
    "net_ebay": 281.05,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201529.jpg",
     "IMG20260626201512.jpg"
@@ -1338,8 +1278,7 @@
    "ship_est_usd": 6,
    "n_offers": 11,
    "net_ebay": 187.49,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195714.jpg",
     "IMG20260626195728.jpg",
@@ -1359,8 +1298,7 @@
    "ship_est_usd": 10,
    "n_offers": 25,
    "net_ebay": 122.11,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201620.jpg",
     "IMG20260626201637.jpg"
@@ -1378,8 +1316,7 @@
    "ship_est_usd": 10,
    "n_offers": 28,
    "net_ebay": 120.4,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201005.jpg",
     "IMG20260626201014.jpg",
@@ -1398,8 +1335,7 @@
    "ship_est_usd": 9,
    "n_offers": 14,
    "net_ebay": 107.76,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626202634.jpg",
     "IMG20260626202657.jpg",
@@ -1420,8 +1356,7 @@
    "ship_est_usd": 6,
    "n_offers": 21,
    "net_ebay": 105.74,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204123.jpg",
     "IMG20260626204113.jpg"
@@ -1439,8 +1374,7 @@
    "ship_est_usd": 9,
    "n_offers": 29,
    "net_ebay": 62.09,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195636.jpg"
    ]
@@ -1457,8 +1391,7 @@
    "ship_est_usd": 9,
    "n_offers": 10,
    "net_ebay": 39.17,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195615.jpg",
     "IMG20260626195622.jpg"
@@ -1476,8 +1409,7 @@
    "ship_est_usd": 9,
    "n_offers": 24,
    "net_ebay": 30.0,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201548.jpg",
     "IMG20260626201555.jpg"
@@ -1495,8 +1427,7 @@
    "ship_est_usd": 9,
    "n_offers": 4,
    "net_ebay": 26.01,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201106.jpg"
    ]
@@ -1513,8 +1444,7 @@
    "ship_est_usd": 9,
    "n_offers": 0,
    "net_ebay": 19.7,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195136.jpg"
    ]
@@ -1531,8 +1461,7 @@
    "ship_est_usd": 8,
    "n_offers": 2,
    "net_ebay": 18.27,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194752.jpg"
    ]
@@ -1549,8 +1478,7 @@
    "ship_est_usd": 6,
    "n_offers": 21,
    "net_ebay": 14.98,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195343.jpg",
     "IMG20260626195322.jpg",
@@ -1570,8 +1498,7 @@
    "ship_est_usd": 9,
    "n_offers": 27,
    "net_ebay": 15.85,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195952.jpg",
     "IMG20260626200004.jpg"
@@ -1589,8 +1516,7 @@
    "ship_est_usd": 15,
    "n_offers": 23,
    "net_ebay": 14.98,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626202114.jpg"
    ]
@@ -1607,8 +1533,7 @@
    "ship_est_usd": 6,
    "n_offers": 24,
    "net_ebay": 18.58,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626203740.jpg"
    ]
@@ -1625,8 +1550,7 @@
    "ship_est_usd": 9,
    "n_offers": 15,
    "net_ebay": 15.9,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626203004.jpg",
     "IMG20260626203010.jpg"
@@ -1644,8 +1568,7 @@
    "ship_est_usd": 4,
    "n_offers": 14,
    "net_ebay": 16.55,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626193748.jpg",
     "IMG20260626193750.jpg"
@@ -1663,8 +1586,7 @@
    "ship_est_usd": 4,
    "n_offers": 14,
    "net_ebay": 14.38,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204246.jpg"
    ]
@@ -1681,8 +1603,7 @@
    "ship_est_usd": 4,
    "n_offers": 27,
    "net_ebay": 11.42,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195517.jpg"
    ]
@@ -1699,8 +1620,7 @@
    "ship_est_usd": 9,
    "n_offers": 5,
    "net_ebay": 12.04,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195851.jpg"
    ]
@@ -1717,8 +1637,7 @@
    "ship_est_usd": 4,
    "n_offers": 25,
    "net_ebay": 13.74,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204254.jpg",
     "IMG20260626204257.jpg"
@@ -1736,8 +1655,7 @@
    "ship_est_usd": 9,
    "n_offers": 5,
    "net_ebay": 13.47,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626203724.jpg"
    ]
@@ -1754,8 +1672,7 @@
    "ship_est_usd": 9,
    "n_offers": 2,
    "net_ebay": 7.35,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626203754.jpg"
    ]
@@ -1772,8 +1689,7 @@
    "ship_est_usd": 9,
    "n_offers": 28,
    "net_ebay": 8.51,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201241.jpg",
     "IMG20260626201247.jpg"
@@ -1791,8 +1707,7 @@
    "ship_est_usd": 15,
    "n_offers": 32,
    "net_ebay": 7.55,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201228.jpg",
     "IMG20260626201225.jpg"
@@ -1810,8 +1725,7 @@
    "ship_est_usd": 9,
    "n_offers": 7,
    "net_ebay": 10.04,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201748.jpg"
    ]
@@ -1828,8 +1742,7 @@
    "ship_est_usd": 4,
    "n_offers": 10,
    "net_ebay": 10.73,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204340.jpg",
     "IMG20260626204401.jpg",
@@ -1848,8 +1761,7 @@
    "ship_est_usd": 4,
    "n_offers": 2,
    "net_ebay": 9.33,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201725.jpg"
    ]
@@ -1866,8 +1778,7 @@
    "ship_est_usd": 10,
    "n_offers": 6,
    "net_ebay": 8.94,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204223.jpg"
    ]
@@ -1884,8 +1795,7 @@
    "ship_est_usd": 9,
    "n_offers": 10,
    "net_ebay": 6.83,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200727.jpg"
    ]
@@ -1902,8 +1812,7 @@
    "ship_est_usd": 9,
    "n_offers": 24,
    "net_ebay": 6.05,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200058.jpg",
     "IMG20260626200043.jpg",
@@ -1922,8 +1831,7 @@
    "ship_est_usd": 4,
    "n_offers": 13,
    "net_ebay": 5.73,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626202907.jpg"
    ]
@@ -1940,8 +1848,7 @@
    "ship_est_usd": 6,
    "n_offers": 17,
    "net_ebay": 2.83,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626200236.jpg",
     "IMG20260626200233.jpg"
@@ -1959,8 +1866,7 @@
    "ship_est_usd": 8,
    "n_offers": 21,
    "net_ebay": 5.42,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194737.jpg"
    ]
@@ -1977,8 +1883,7 @@
    "ship_est_usd": 4,
    "n_offers": 12,
    "net_ebay": 6.17,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626204333.jpg"
    ]
@@ -1995,8 +1900,7 @@
    "ship_est_usd": 15,
    "n_offers": 19,
    "net_ebay": -3.92,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626202042.jpg",
     "IMG20260626202045.jpg"
@@ -2014,8 +1918,7 @@
    "ship_est_usd": 4,
    "n_offers": 36,
    "net_ebay": 4.77,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626201300.jpg"
    ]
@@ -2032,8 +1935,7 @@
    "ship_est_usd": 6,
    "n_offers": 15,
    "net_ebay": 1.32,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195538.jpg",
     "IMG20260626195544.jpg"
@@ -2051,8 +1953,7 @@
    "ship_est_usd": 4,
    "n_offers": 26,
    "net_ebay": 2.1,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626193835.jpg"
    ]
@@ -2069,8 +1970,7 @@
    "ship_est_usd": 6,
    "n_offers": 20,
    "net_ebay": 0.31,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626194135.jpg"
    ]
@@ -2114,8 +2014,7 @@
    "ship_est_usd": null,
    "n_offers": 24,
    "net_ebay": 341.78,
-   "ebay_url": null,
-   "ebay_item_id": null,
+   "marketplaces": null,
    "images": [
     "IMG20260626195018.jpg",
     "IMG20260626194530.jpg"
