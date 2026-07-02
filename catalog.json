@@ -421,7 +421,17 @@
    "ship_est_usd": 10,
    "n_offers": 24,
    "net_ebay": 41.75,
-   "marketplaces": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398133645324",
+     "generated_fields": {
+      "condition": "New with tags",
+      "Material": "Polyester (custom)"
+     }
+    }
+   },
    "condition": "New with tags",
    "images": [
     "IMG20260626204627.jpg",
