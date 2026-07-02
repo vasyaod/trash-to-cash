@@ -339,7 +339,18 @@
    "ship_est_usd": 10,
    "n_offers": 28,
    "net_ebay": 52.2,
-   "marketplaces": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398133618835",
+     "generated_fields": {
+      "condition": "New with box",
+      "Style": "Espadrille (custom)",
+      "Upper Material": "Canvas (custom)"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626203942.jpg",
