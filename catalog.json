@@ -383,11 +383,13 @@
    "net_ebay": 44.82,
    "marketplaces": {
     "ebay": {
-     "status": "error",
-     "error": "drive() loop detected a CAPTCHA at the first step (account is challenging CDP connections; HTTP showed the Sell page clean but the CDP page was on splashui/captcha). Blocked = human_verification. The state-loop handled it gracefully. Needs a clean session (cool-down or human-cleared CAPTCHA), then drive() resumes.",
+     "status": "draft",
+     "error": "Draft fully built via HTTP (title/price/category/condition/free-shipping), clean, no CAPTCHA. Only the first photo is missing \u2014 HTTP has no file-upload action and eBay's 'Upload from web' (URL) only appears after a first photo exists. Needs photo via Upload-from-mobile, or an RBS file-upload feature.",
      "ref": null,
      "generated_fields": {
-      "category": "Toys & Hobbies > Robots, Monsters & Space Toys > Robots > 1970-Now"
+      "category": "Toys & Hobbies > Robots, Monsters & Space Toys > Robots > 1970-Now",
+      "condition": "Used",
+      "draft_id": "5267331221512"
      }
     }
    },
