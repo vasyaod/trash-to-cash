@@ -383,9 +383,9 @@
    "net_ebay": 44.82,
    "marketplaces": {
     "ebay": {
-     "status": "draft",
-     "error": "Draft fully built via HTTP (title/price/category/condition/free-shipping), clean, no CAPTCHA. Only the first photo is missing \u2014 HTTP has no file-upload action and eBay's 'Upload from web' (URL) only appears after a first photo exists. Needs photo via Upload-from-mobile, or an RBS file-upload feature.",
-     "ref": null,
+     "status": "published",
+     "error": null,
+     "ref": "398133610702",
      "generated_fields": {
       "category": "Toys & Hobbies > Robots, Monsters & Space Toys > Robots > 1970-Now",
       "condition": "Used",
