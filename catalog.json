@@ -384,7 +384,7 @@
    "marketplaces": {
     "ebay": {
      "status": "error",
-     "error": "Publish attempt failed: flow stalled at prelist/condition step, never reached the listing form (title field timed out). Likely mid-flow bounce.",
+     "error": "Find-a-match step required choosing a category (eBay could not auto-categorize this Mibro robot; offered Toys & Hobbies > Robots with a None-selected/Done picker). The automation does not yet handle category selection, so it never reached the listing form.",
      "ref": null
     }
    },
