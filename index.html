@@ -244,7 +244,7 @@ function render(){
     return `<tr data-i="${d._i}" class="card">
       <td>${thumb}</td>
       <td class="title"><span class="lotid" data-lot="${d.lot_id}" title="Copy lot ID">#${d.lot_id}</span> ${esc(d.title)}
-        <div class="muted">📷 ${d._imgs.map((im,i)=>`<span class="lb imglink" data-imgs="${imgAttr}" data-idx="${i}">${i+1}</span>`).join(' · ')}</div>
+        <div class="muted">📷 ${d._imgs.map((im,i)=>`<span class="lb imglink" data-imgs="${imgAttr}" data-idx="${i}">${i+1}</span>`).join(' · ')}${d.ebay_url?` · <a href="${d.ebay_url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">on eBay ↗</a>`:''}</div>
         ${sellerLinks(d.title)}</td>
       <td data-label="">${badge(d)}</td>
       <td class="num" data-label="List $">${fmt(d.listing_price)}</td>
@@ -371,6 +371,7 @@ function openDetail(i, fromPop){
       ['Photos', d._imgs.length],
     ];
   }
+  if(d.ebay_url){ fieldRows.splice(2,0,['eBay listing', `<a href="${d.ebay_url}" target="_blank" rel="noopener">View on eBay ↗</a>`]); }
   const fields=fieldRows.map(([k,v])=>`<tr><th>${k}</th><td>${v}</td></tr>`).join('');
   const multi=d._imgs.length>1;
   const slides=d._imgs.map(im=>`<img class="d-slide" draggable="false" src="${IMG}${im}" alt="">`).join('');
