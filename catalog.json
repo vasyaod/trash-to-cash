@@ -384,7 +384,7 @@
    "marketplaces": {
     "ebay": {
      "status": "error",
-     "error": "Category auto-selection now works (picks Toys & Hobbies > Robots), but after selecting, the flow still does not advance past Find-a-match to the listing form \u2014 the category dialog needs a different confirm/close step or Continue-without-match re-enable timing. Title field never appears. Needs more work on the category-dialog finalize.",
+     "error": "Publish attempt bounced to a CAPTCHA (splashui/captcha) at the Sell step \u2014 session challenged before the flow could run. New/Used condition-dialog fix is in place but untested. Retry when the session is clean.",
      "ref": null,
      "generated_fields": {
       "category": "Toys & Hobbies > Robots, Monsters & Space Toys > Robots > 1970-Now"
