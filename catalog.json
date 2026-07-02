@@ -381,7 +381,13 @@
    "ship_est_usd": 9,
    "n_offers": 16,
    "net_ebay": 44.82,
-   "marketplaces": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "error",
+     "error": "Publish attempt failed: flow stalled at prelist/condition step, never reached the listing form (title field timed out). Likely mid-flow bounce.",
+     "ref": null
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626203728.jpg"
