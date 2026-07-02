@@ -379,8 +379,13 @@ function openDetail(i, fromPop){
   const _mp=ebayMp(d), _mu=ebayUrl(_mp);
   if(_mp){
     const cell = _mu ? `<a href="${_mu}" target="_blank" rel="noopener">View on eBay ↗</a>`
-                     : (_mp.status==='listed'?'listed (id pending)':(_mp.status||''));
+                     : (_mp.status==='published'?'published (id pending)':(_mp.status||''));
     fieldRows.splice(2,0,[`eBay (${_mp.status||'—'})`, _mp.error?`<span class="neg">${esc(_mp.error)}</span>`:cell]);
+    const gf=_mp.generated_fields;
+    if(gf && Object.keys(gf).length){
+      const items=Object.entries(gf).map(([k,v])=>`<div><span class="muted">${esc(k)}:</span> ${esc(String(v))}</div>`).join('');
+      fieldRows.splice(3,0,['Auto-generated', items]);
+    }
   }
   const fields=fieldRows.map(([k,v])=>`<tr><th>${k}</th><td>${v}</td></tr>`).join('');
   const multi=d._imgs.length>1;

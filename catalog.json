@@ -385,7 +385,10 @@
     "ebay": {
      "status": "error",
      "error": "Category auto-selection now works (picks Toys & Hobbies > Robots), but after selecting, the flow still does not advance past Find-a-match to the listing form \u2014 the category dialog needs a different confirm/close step or Continue-without-match re-enable timing. Title field never appears. Needs more work on the category-dialog finalize.",
-     "ref": null
+     "ref": null,
+     "generated_fields": {
+      "category": "Toys & Hobbies > Robots, Monsters & Space Toys > Robots > 1970-Now"
+     }
     }
    },
    "condition": "Pre-owned - Good",
