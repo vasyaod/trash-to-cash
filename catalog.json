@@ -384,7 +384,7 @@
    "marketplaces": {
     "ebay": {
      "status": "error",
-     "error": "Publish attempt bounced to a CAPTCHA (splashui/captcha) at the Sell step \u2014 session challenged before the flow could run. New/Used condition-dialog fix is in place but untested. Retry when the session is clean.",
+     "error": "drive() loop detected a CAPTCHA at the first step (account is challenging CDP connections; HTTP showed the Sell page clean but the CDP page was on splashui/captcha). Blocked = human_verification. The state-loop handled it gracefully. Needs a clean session (cool-down or human-cleared CAPTCHA), then drive() resumes.",
      "ref": null,
      "generated_fields": {
       "category": "Toys & Hobbies > Robots, Monsters & Space Toys > Robots > 1970-Now"
