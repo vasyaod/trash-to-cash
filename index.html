@@ -20,8 +20,6 @@
   input[type=search], select { background:var(--card); border:1px solid var(--line); color:var(--fg);
           border-radius:8px; padding:8px 10px; font-size:14px; }
   input[type=search] { min-width:240px; flex:1; }
-  .csvdl { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:8px 12px;
-    font-size:14px; font-weight:600; white-space:nowrap; } .csvdl:hover { border-color:var(--accent); text-decoration:none; }
   main { padding:16px 24px 60px; }
   table { border-collapse:collapse; width:100%; }
   th,td { padding:8px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:middle; }
@@ -153,7 +151,6 @@
     <option value="high">high</option><option value="med">med</option><option value="low">low</option>
   </select>
   <span class="muted" id="count"></span>
-  <a class="csvdl" href="catalog.csv" download title="Download the full catalog as CSV">⬇ CSV</a>
 </div>
 <main>
   <table id="tbl">
