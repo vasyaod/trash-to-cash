@@ -1667,7 +1667,19 @@
      1
     ]
    },
-   "marketplaces": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137124610",
+     "sku": null,
+     "generated_fields": {
+      "condition": "New with tags",
+      "Brand": "Oakley (custom)",
+      "Style": "Waist Pack (custom)"
+     }
+    }
+   },
    "condition": "New with tags",
    "images": [
     "IMG20260626201005.jpg",
