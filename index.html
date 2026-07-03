@@ -209,8 +209,28 @@ let TOTAL=0;
 fetch('catalog.json').then(r=>r.json()).then(data=>{
   TOTAL = data.total || (data.items||[]).length;
   DATA=(data.items||[]).map((o,idx)=>{ o._imgs=Array.isArray(o.images)?o.images:[]; o._i=idx; return o; });
-  renderStats(); render(); openLotFromHash();
+  applyFiltersFromURL(); renderStats(); render(); openLotFromHash();
 });
+
+// --- shareable filters: read the state from ?q=&conf=&status= on load ---
+function applyFiltersFromURL(){
+  const p=new URLSearchParams(location.search);
+  if(p.has('q'))    document.getElementById('q').value    = p.get('q');
+  if(p.has('conf')) document.getElementById('conf').value = p.get('conf');
+  if(p.has('status')) document.getElementById('mp').value = p.get('status');
+}
+// --- write the current filter state back into the URL (copy-a-link → same view) ---
+function syncURL(){
+  const p=new URLSearchParams();
+  const q=document.getElementById('q').value.trim();
+  const cf=document.getElementById('conf').value;
+  const mp=document.getElementById('mp').value;
+  if(q)  p.set('q', q);
+  if(cf) p.set('conf', cf);
+  if(mp) p.set('status', mp);
+  const qs=p.toString();
+  history.replaceState(history.state, '', location.pathname + (qs?'?'+qs:'') + (location.hash||''));
+}
 
 function renderStats(){
   const gross=DATA.reduce((s,d)=>s+(num(d.ebay_price_median)||0),0);
@@ -244,6 +264,7 @@ function render(){
     return x<y?-1*sortDir : x>y?1*sortDir : 0;
   });
   document.getElementById('count').textContent = list.length+' / '+DATA.length+' shown';
+  syncURL();
   const badge=d=>d.is_bundle?`<span class="badge b-bundle">bundle</span>`:`<span class="badge b-${d.confidence}">${d.confidence}</span>`;
   document.getElementById('rows').innerHTML = list.map(d=>{
     const first=d._imgs[0];
