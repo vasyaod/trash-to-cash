@@ -453,7 +453,24 @@
    "ship_est_usd": 6,
    "n_offers": 30,
    "net_ebay": 88.01,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 175.0,
+    "bucket_width": 17.5,
+    "n": 38,
+    "n_noise": 2,
+    "counts": [
+     1,
+     2,
+     11,
+     3,
+     9,
+     5,
+     3,
+     1,
+     1,
+     2
+    ]
+   },
    "marketplaces": {
     "ebay": {
      "status": "published",
@@ -498,7 +515,24 @@
    "ship_est_usd": 10,
    "n_offers": 19,
    "net_ebay": 62.07,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 200.0,
+    "bucket_width": 20.0,
+    "n": 35,
+    "n_noise": 5,
+    "counts": [
+     0,
+     5,
+     9,
+     8,
+     6,
+     2,
+     1,
+     1,
+     1,
+     2
+    ]
+   },
    "marketplaces": {
     "ebay": {
      "status": "published",
@@ -524,7 +558,24 @@
    "ship_est_usd": 10,
    "n_offers": 28,
    "net_ebay": 52.2,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 121.0,
+    "bucket_width": 12.1,
+    "n": 29,
+    "n_noise": 1,
+    "counts": [
+     0,
+     2,
+     5,
+     4,
+     4,
+     1,
+     4,
+     2,
+     4,
+     3
+    ]
+   },
    "marketplaces": {
     "ebay": {
      "status": "published",
@@ -579,7 +630,24 @@
    "ship_est_usd": 9,
    "n_offers": 16,
    "net_ebay": 44.82,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 200.0,
+    "bucket_width": 20.0,
+    "n": 27,
+    "n_noise": 3,
+    "counts": [
+     2,
+     10,
+     5,
+     2,
+     2,
+     3,
+     0,
+     1,
+     0,
+     2
+    ]
+   },
    "marketplaces": {
     "ebay": {
      "status": "published",
@@ -609,7 +677,24 @@
    "ship_est_usd": 10,
    "n_offers": 24,
    "net_ebay": 41.75,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 132.99,
+    "bucket_width": 13.299,
+    "n": 38,
+    "n_noise": 2,
+    "counts": [
+     0,
+     5,
+     8,
+     6,
+     7,
+     4,
+     5,
+     1,
+     1,
+     1
+    ]
+   },
    "marketplaces": {
     "ebay": {
      "status": "published",
