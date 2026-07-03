@@ -222,7 +222,7 @@ const ebayMp = d => (d.marketplaces && d.marketplaces.ebay) || null;
 const mpAny = (d, st) => { const m=d.marketplaces; return !!(m && Object.values(m).some(e=>e && e.status===st)); };
 const ebayUrl = mp => { if(!mp||!mp.ref) return null;
   const r=String(mp.ref); return /^https?:|\/itm\//.test(r)?r:('https://www.ebay.com/itm/'+r); };
-let DATA=[], sortK='net_ebay', sortDir=-1;
+let DATA=[], sortK='lot_id', sortDir=1;
 
 let TOTAL=0;
 fetch('catalog.json').then(r=>r.json()).then(data=>{
