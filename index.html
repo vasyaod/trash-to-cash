@@ -158,6 +158,12 @@
   .dhist .col .cn { font-size:10px; color:var(--mut); margin-bottom:2px; line-height:1; }
   .daxis { display:flex; justify-content:space-between; color:var(--mut); font-size:11px; margin-top:4px; }
   .hist i, .dhist .col { cursor:pointer; }
+  /* bucket that contains our listing price → green */
+  .hist i.lp { background:var(--hi); opacity:1; min-height:3px; }
+  .dhist .col.lp b { background:var(--hi); opacity:1; min-height:3px; }
+  .dhist .col.lp { background:rgba(34,197,94,.12); border-radius:3px; }
+  .dhist .col.lp .cn { color:var(--hi); }
+  .lpnote { color:var(--hi); }
   #tip { position:fixed; z-index:100; background:#000; color:#fff; border:1px solid var(--line);
     border-radius:6px; padding:5px 9px; font-size:12px; white-space:nowrap; pointer-events:none;
     transform:translate(-50%,-100%); box-shadow:0 4px 14px rgba(0,0,0,.5); }
@@ -317,7 +323,7 @@ function render(){
       <td data-label="">${badge(d)}</td>
       <td class="num" data-label="List $">${fmt(d.listing_price)}</td>
       <td class="num" data-label="Est Price $">${fmt(d.ebay_price_median)}</td>
-      <td class="col-sm-hide" data-label="Sold spread">${histInline(d.ebay_price_dist)}</td>
+      <td class="col-sm-hide" data-label="Sold spread">${histInline(d.ebay_price_dist, d.listing_price)}</td>
       <td class="num muted col-sm-hide" data-label="Comps">${d.ebay_price_n||''}</td>
       <td class="num" data-label="Ship $">${fmt(d.ship_ebay_usd)}</td>
       <td class="num muted col-sm-hide" data-label="Ship n">${d.n_offers||''}</td>
@@ -336,25 +342,37 @@ function sellerLinks(title){
 }
 const fmt=v=>{ const n=num(v); return n===null?'':n.toFixed(2); };
 // price-distribution renderers (ebay_price_dist). Both no-op to '' when absent.
-function histInline(dist){
+// Which bucket does our listing price fall into? -1 = none (unset or above p_max).
+function lpBucket(dist, lp){
+  lp=num(lp); if(lp===null) return -1;
+  const w=num(dist.bucket_width)||0, pm=num(dist.p_max)||0;
+  if(w<=0 || lp<0 || lp>pm) return -1;
+  return Math.min(dist.counts.length-1, Math.floor(lp/w));
+}
+function histInline(dist, lp){
   if(!dist || !Array.isArray(dist.counts)) return '';
   const c=dist.counts, mx=Math.max(1,...c), w=num(dist.bucket_width)||0, pm=num(dist.p_max)||0;
+  const li=lpBucket(dist, lp);
   const bars=c.map((v,i)=>{
     const lo=w*i, hi=(i===c.length-1?pm:w*(i+1));
-    return `<i class="${v?'':'empty'}" style="height:${Math.round(v/mx*100)}%" data-tip="$${lo.toFixed(0)}–$${hi.toFixed(0)}: ${v} sold"></i>`;
+    const cls=(i===li?'lp ':'')+(v?'':'empty');
+    const tip=`$${lo.toFixed(0)}–$${hi.toFixed(0)}: ${v} sold`+(i===li?` · our price $${num(lp).toFixed(0)}`:'');
+    return `<i class="${cls.trim()}" style="height:${Math.round(v/mx*100)}%" data-tip="${tip}"></i>`;
   }).join('');
   return `<span class="hist" title="Sold-price spread: ${dist.n} comps, $0–$${pm.toFixed(0)}${dist.n_noise?`, ${dist.n_noise} outlier(s) dropped`:''}">${bars}</span>`;
 }
-function distBlock(dist){
+function distBlock(dist, lp){
   if(!dist || !Array.isArray(dist.counts)) return '';
   const c=dist.counts, mx=Math.max(1,...c), w=num(dist.bucket_width)||0, pm=num(dist.p_max)||0;
+  const li=lpBucket(dist, lp);
   const cols=c.map((v,i)=>{
     const lo=(w*i), hi=(i===c.length-1?pm:w*(i+1));
-    const t=`$${lo.toFixed(0)}–$${hi.toFixed(0)}: ${v} sold`;
-    return `<div class="col" data-tip="${t}"><span class="cn">${v||''}</span><b class="${v?'':'empty'}" style="height:${Math.round(v/mx*100)}%"></b></div>`;
+    const t=`$${lo.toFixed(0)}–$${hi.toFixed(0)}: ${v} sold`+(i===li?` · our list price $${num(lp).toFixed(0)}`:'');
+    return `<div class="col${i===li?' lp':''}" data-tip="${t}"><span class="cn">${v||''}</span><b class="${v?'':'empty'}" style="height:${Math.round(v/mx*100)}%"></b></div>`;
   }).join('');
+  const note = li>=0 ? ` · <span class="lpnote">▮ our list price $${num(lp).toFixed(0)}</span>` : '';
   return `<div class="distbox">
-    <div class="dl">Sold-price distribution · ${dist.n} comps${dist.n_noise?` · ${dist.n_noise} outlier(s) dropped`:''}</div>
+    <div class="dl">Sold-price distribution · ${dist.n} comps${dist.n_noise?` · ${dist.n_noise} outlier(s) dropped`:''}${note}</div>
     <div class="dhist">${cols}</div>
     <div class="daxis"><span>$0</span><span>$${pm.toFixed(0)}</span></div>
   </div>`;
@@ -517,7 +535,7 @@ function openDetail(i, fromPop){
         <div class="d-dots" id="dDots">${d._imgs.map((_,j)=>`<span class="d-dot" data-i="${j}"></span>`).join('')}</div>`:''}
     </div>
     <table class="d-fields"><tbody>${fields}</tbody></table>
-    ${distBlock(d.ebay_price_dist)}
+    ${distBlock(d.ebay_price_dist, d.listing_price)}
     ${sellerLinks(d.title)}`;
   detail.hidden=false; document.body.style.overflow='hidden';
   initDSlider(d._imgs);
