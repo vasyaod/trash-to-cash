@@ -150,6 +150,12 @@
     <option value="">All confidence</option>
     <option value="high">high</option><option value="med">med</option><option value="low">low</option>
   </select>
+  <select id="mp">
+    <option value="">All lots</option>
+    <option value="published">Published</option>
+    <option value="error">Has error</option>
+    <option value="none">Not published</option>
+  </select>
   <span class="muted" id="count"></span>
 </div>
 <main>
@@ -193,6 +199,8 @@ const IMG = 'img_small/';
 const num = v => { const n=parseFloat(v); return (v===null||v===''||isNaN(n))?null:n; };
 // per-marketplace publish state helpers (see MODEL.md `marketplaces`)
 const ebayMp = d => (d.marketplaces && d.marketplaces.ebay) || null;
+// aggregate across ALL marketplaces: does any entry have this status?
+const mpAny = (d, st) => { const m=d.marketplaces; return !!(m && Object.values(m).some(e=>e && e.status===st)); };
 const ebayUrl = mp => { if(!mp||!mp.ref) return null;
   const r=String(mp.ref); return /^https?:|\/itm\//.test(r)?r:('https://www.ebay.com/itm/'+r); };
 let DATA=[], sortK='net_ebay', sortDir=-1;
@@ -217,10 +225,14 @@ const stat=(b,s)=>`<div class="stat"><b>${b}</b><span>${s}</span></div>`;
 function render(){
   const q=document.getElementById('q').value.toLowerCase();
   const cf=document.getElementById('conf').value;
+  const mp=document.getElementById('mp').value;
   const qn=q.replace(/^#/,'');                       // lot-id query (strip leading #)
   const idQuery=/^#?\d+$/.test(q);
   let list=DATA.filter(d=>{
     if(cf && d.confidence!==cf) return false;
+    if(mp==='published' && !mpAny(d,'published')) return false;   // listed on any marketplace
+    if(mp==='error' && !mpAny(d,'error')) return false;           // any marketplace errored
+    if(mp==='none' && mpAny(d,'published')) return false;         // not yet listed anywhere
     if(!q) return true;
     if(d.title.toLowerCase().includes(q)) return true;
     if(idQuery && String(d.lot_id).includes(qn)) return true;   // match by lot id too
@@ -276,6 +288,7 @@ document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{
 });
 document.getElementById('q').oninput=render;
 document.getElementById('conf').onchange=render;
+document.getElementById('mp').onchange=render;
 
 /* ---- copy lot id to clipboard (chips in list + modal) ---- */
 function copyText(t){
