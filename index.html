@@ -35,6 +35,12 @@
   .thumbwrap { position:relative; display:inline-block; }
   .imgcount { position:absolute; right:-6px; bottom:-6px; background:var(--accent); color:#fff; font-size:10px;
               border-radius:10px; padding:1px 6px; border:2px solid var(--bg); }
+  /* publish-status mark on the thumbnail's top-left corner */
+  .smark { position:absolute; left:-6px; top:-6px; width:18px; height:18px; border-radius:50%;
+           display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700;
+           color:#fff; border:2px solid var(--bg); line-height:1; }
+  .smark.ok { background:var(--hi); }
+  .smark.err { background:var(--low); }
   .title { font-weight:600; max-width:340px; }
   .badge { font-size:11px; font-weight:700; padding:2px 8px; border-radius:20px; text-transform:uppercase; }
   .b-high { background:rgba(34,197,94,.15); color:var(--hi); }
@@ -227,6 +233,9 @@ const ebayMp = d => (d.marketplaces && d.marketplaces.ebay) || null;
 const mpAny = (d, st) => { const m=d.marketplaces; return !!(m && Object.values(m).some(e=>e && e.status===st)); };
 const ebayUrl = mp => { if(!mp||!mp.ref) return null;
   const r=String(mp.ref); return /^https?:|\/itm\//.test(r)?r:('https://www.ebay.com/itm/'+r); };
+// corner status mark for a thumbnail: green ✓ if listed anywhere, red ✕ if any marketplace errored.
+const statusMark = d => mpAny(d,'published') ? `<span class="smark ok" data-tip="Published">✓</span>`
+  : mpAny(d,'error') ? `<span class="smark err" data-tip="Publish error">✕</span>` : '';
 let DATA=[], sortK='lot_id', sortDir=1;
 
 let TOTAL=0;
@@ -298,7 +307,7 @@ function render(){
     const thumb = first
       ? `<span class="thumbwrap lb" data-imgs="${imgAttr}" data-idx="0" title="View photos">
            <img class="thumb" loading="lazy" src="${IMG}${first}" alt="">
-           ${d._imgs.length>1?`<span class="imgcount">${d._imgs.length}</span>`:''}</span>`
+           ${statusMark(d)}${d._imgs.length>1?`<span class="imgcount">${d._imgs.length}</span>`:''}</span>`
       : '';
     return `<tr data-i="${d._i}" class="card">
       <td>${thumb}</td>
