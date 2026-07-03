@@ -986,7 +986,20 @@
      1
     ]
    },
-   "marketplaces": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137149393",
+     "sku": null,
+     "generated_fields": {
+      "category": "Toys & Hobbies > Collectible Card Games > CCG Sealed Packs",
+      "condition": "Pre-owned - Good",
+      "Brand": "Pok\u00e9mon",
+      "Set": "Mixed (custom)"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626193700.jpg",
