@@ -326,10 +326,12 @@ const fmt=v=>{ const n=num(v); return n===null?'':n.toFixed(2); };
 // price-distribution renderers (ebay_price_dist). Both no-op to '' when absent.
 function histInline(dist){
   if(!dist || !Array.isArray(dist.counts)) return '';
-  const c=dist.counts, mx=Math.max(1,...c);
-  const bars=c.map(v=>`<i class="${v?'':'empty'}" style="height:${Math.round(v/mx*100)}%"></i>`).join('');
-  const pm=num(dist.p_max);
-  return `<span class="hist" title="Sold-price spread: ${dist.n} comps, $0–$${pm!==null?pm.toFixed(0):'?'}${dist.n_noise?`, ${dist.n_noise} outlier(s) dropped`:''}">${bars}</span>`;
+  const c=dist.counts, mx=Math.max(1,...c), w=num(dist.bucket_width)||0, pm=num(dist.p_max)||0;
+  const bars=c.map((v,i)=>{
+    const lo=w*i, hi=(i===c.length-1?pm:w*(i+1));
+    return `<i class="${v?'':'empty'}" style="height:${Math.round(v/mx*100)}%" title="$${lo.toFixed(0)}–$${hi.toFixed(0)}: ${v} sold"></i>`;
+  }).join('');
+  return `<span class="hist" title="Sold-price spread: ${dist.n} comps, $0–$${pm.toFixed(0)}${dist.n_noise?`, ${dist.n_noise} outlier(s) dropped`:''}">${bars}</span>`;
 }
 function distBlock(dist){
   if(!dist || !Array.isArray(dist.counts)) return '';
