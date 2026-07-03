@@ -167,7 +167,8 @@
   <table id="tbl">
     <thead><tr>
       <th title="Hero photo — tap to open the photo gallery">Photo</th>
-      <th data-k="title" title="Item title, lot id (#), photo links and 'other sellers' search links. Click to sort A→Z.">Item</th>
+      <th class="num" data-k="lot_id" title="Lot number. Click to sort.">Lot #</th>
+      <th data-k="title" title="Item title, photo links and 'other sellers' search links. Click to sort A→Z.">Item</th>
       <th data-k="confidence" title="Confidence in the ID + pricing (high / med / low), based on comp count and match quality. Click to sort.">Conf</th>
       <th class="num" data-k="listing_price" title="Listing price — the price we actually list at on marketplaces. Manually settable; defaults to the eBay median. Click to sort.">List $</th>
       <th class="num" data-k="ebay_price_median" title="Real eBay Sold/Completed median — the realized market price (not asking). Click to sort.">Est Price $</th>
@@ -283,7 +284,8 @@ function render(){
       : '';
     return `<tr data-i="${d._i}" class="card">
       <td>${thumb}</td>
-      <td class="title"><span class="lotid" data-lot="${d.lot_id}" title="Copy lot ID">#${d.lot_id}</span> ${esc(d.title)}
+      <td class="num" data-label="Lot #"><span class="lotid" data-lot="${d.lot_id}" title="Copy lot ID">#${d.lot_id}</span></td>
+      <td class="title">${esc(d.title)}
         <div class="muted">📷 ${d._imgs.map((im,i)=>`<span class="lb imglink" data-imgs="${imgAttr}" data-idx="${i}">${i+1}</span>`).join(' · ')}${(()=>{const u=ebayUrl(ebayMp(d));return u?` · <a href="${u}" target="_blank" rel="noopener" onclick="event.stopPropagation()">on eBay ↗</a>`:'';})()}</div>
         ${sellerLinks(d.title)}</td>
       <td data-label="">${badge(d)}</td>
@@ -310,7 +312,7 @@ const fmt=v=>{ const n=num(v); return n===null?'':n.toFixed(2); };
 
 document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{
   const k=th.dataset.k;
-  if(sortK===k) sortDir*=-1; else { sortK=k; sortDir = (k==='title'||k==='confidence')?1:-1; }
+  if(sortK===k) sortDir*=-1; else { sortK=k; sortDir = (k==='title'||k==='confidence'||k==='lot_id')?1:-1; }
   render();
 });
 document.getElementById('q').oninput=render;
