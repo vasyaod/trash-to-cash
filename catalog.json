@@ -364,50 +364,6 @@
    ]
   },
   {
-   "lot_id": 114,
-   "title": "Pokemon TCG Collector Lot \u2014 4 Tins + Cards, Player's Guides & Handbook",
-   "confidence": "med",
-   "listing_price": 111,
-   "ebay_price_median": 197.62,
-   "ebay_price_n": null,
-   "est_price_old": 111,
-   "ship_ebay_usd": 6.77,
-   "ship_est_usd": 4,
-   "n_offers": 31,
-   "net_ebay": 104.23,
-   "ebay_price_dist": {
-    "p_max": 149.9,
-    "bucket_width": 14.99,
-    "n": 38,
-    "n_noise": 2,
-    "counts": [
-     13,
-     7,
-     3,
-     3,
-     4,
-     2,
-     4,
-     0,
-     1,
-     1
-    ]
-   },
-   "marketplaces": null,
-   "condition": "Pre-owned - Good",
-   "images": [
-    "IMG20260626193700.jpg",
-    "IMG20260626193640.jpg",
-    "IMG20260626193734.jpg",
-    "IMG20260626194002.jpg",
-    "IMG20260626194007.jpg",
-    "IMG20260626193748.jpg",
-    "IMG20260626193750.jpg",
-    "IMG20260626194135.jpg",
-    "IMG20260626195936.jpg"
-   ]
-  },
-  {
    "lot_id": 100,
    "title": "Tory Burch Tennis Ball Slide Sandal Fluo Yellow/Off White Size 7 (Style 44283) \u2014 New in Box",
    "confidence": "med",
@@ -981,6 +937,50 @@
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626200141.jpg"
+   ]
+  },
+  {
+   "lot_id": 114,
+   "title": "Pokemon TCG Collector Lot \u2014 4 Tins + Cards, Player's Guides & Handbook",
+   "confidence": "med",
+   "listing_price": 111,
+   "ebay_price_median": 21.0,
+   "ebay_price_n": 40,
+   "est_price_old": 111,
+   "ship_ebay_usd": 6.77,
+   "ship_est_usd": 4,
+   "n_offers": 31,
+   "net_ebay": 104.23,
+   "ebay_price_dist": {
+    "p_max": 149.9,
+    "bucket_width": 14.99,
+    "n": 38,
+    "n_noise": 2,
+    "counts": [
+     13,
+     7,
+     3,
+     3,
+     4,
+     2,
+     4,
+     0,
+     1,
+     1
+    ]
+   },
+   "marketplaces": null,
+   "condition": "Pre-owned - Good",
+   "images": [
+    "IMG20260626193700.jpg",
+    "IMG20260626193640.jpg",
+    "IMG20260626193734.jpg",
+    "IMG20260626194002.jpg",
+    "IMG20260626194007.jpg",
+    "IMG20260626193748.jpg",
+    "IMG20260626193750.jpg",
+    "IMG20260626194135.jpg",
+    "IMG20260626195936.jpg"
    ]
   },
   {
