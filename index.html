@@ -415,7 +415,7 @@ function openDetail(i, fromPop){
     const gf=_mp.generated_fields;
     if(gf && Object.keys(gf).length){
       const items=Object.entries(gf).map(([k,v])=>`<div><span class="muted">${esc(k)}:</span> ${esc(String(v))}</div>`).join('');
-      fieldRows.splice(3,0,['Auto-generated', items]);
+      fieldRows.push(['Auto-generated', items]);   // keep this as the last row
     }
   }
   const fields=fieldRows.map(([k,v])=>`<tr><th>${k}</th><td>${v}</td></tr>`).join('');
