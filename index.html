@@ -139,6 +139,18 @@
     /* detail modal's field table stays a clean 2-column layout */
     .d-box { max-width:none; }
   }
+  /* price-distribution histogram (ebay_price_dist) */
+  .hist { display:inline-flex; align-items:flex-end; gap:1px; height:26px; width:74px; vertical-align:middle; }
+  .hist i { flex:1; min-width:0; background:var(--accent); opacity:.85; border-radius:1px 1px 0 0; min-height:1px; }
+  .hist i.empty { opacity:.18; }
+  .distbox { margin-top:14px; border-top:1px solid var(--line); padding-top:12px; }
+  .distbox .dl { color:var(--mut); font-size:12px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:8px; }
+  .dhist { display:flex; align-items:flex-end; gap:3px; height:76px; }
+  .dhist .col { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
+  .dhist .col b { width:100%; background:var(--accent); opacity:.85; border-radius:2px 2px 0 0; min-height:2px; }
+  .dhist .col b.empty { opacity:.16; }
+  .dhist .col .cn { font-size:10px; color:var(--mut); margin-bottom:2px; line-height:1; }
+  .daxis { display:flex; justify-content:space-between; color:var(--mut); font-size:11px; margin-top:4px; }
 </style>
 </head>
 <body>
@@ -172,6 +184,7 @@
       <th data-k="confidence" title="Confidence in the ID + pricing (high / med / low), based on comp count and match quality. Click to sort.">Conf</th>
       <th class="num" data-k="listing_price" title="Listing price — the price we actually list at on marketplaces. Manually settable; defaults to the eBay median. Click to sort.">List $</th>
       <th class="num" data-k="ebay_price_median" title="Real eBay Sold/Completed median — the realized market price (not asking). Click to sort.">Est Price $</th>
+      <th class="col-sm-hide" title="Distribution of realized eBay Sold prices ($0 → trimmed max, 10 buckets). Shows the price spread, not just the median.">Sold spread</th>
       <th class="num" data-k="ebay_price_n" title="Number of eBay sold listings behind the price median (more = more reliable).">Comps</th>
       <th class="num" data-k="ship_ebay_usd" title="Real eBay charged-delivery median, Free-Shipping listings excluded (their postage is baked into price).">Ship $</th>
       <th class="num" data-k="n_offers" title="Number of paid shipping comps behind Ship $.">Ship n</th>
@@ -291,6 +304,7 @@ function render(){
       <td data-label="">${badge(d)}</td>
       <td class="num" data-label="List $">${fmt(d.listing_price)}</td>
       <td class="num" data-label="Est Price $">${fmt(d.ebay_price_median)}</td>
+      <td class="col-sm-hide" data-label="Sold spread">${histInline(d.ebay_price_dist)}</td>
       <td class="num muted col-sm-hide" data-label="Comps">${d.ebay_price_n||''}</td>
       <td class="num" data-label="Ship $">${fmt(d.ship_ebay_usd)}</td>
       <td class="num muted col-sm-hide" data-label="Ship n">${d.n_offers||''}</td>
@@ -309,6 +323,28 @@ function sellerLinks(title){
     <a href="https://www.google.com/search?tbm=shop&q=${t}" target="_blank" rel="noopener">Google</a></div>`;
 }
 const fmt=v=>{ const n=num(v); return n===null?'':n.toFixed(2); };
+// price-distribution renderers (ebay_price_dist). Both no-op to '' when absent.
+function histInline(dist){
+  if(!dist || !Array.isArray(dist.counts)) return '';
+  const c=dist.counts, mx=Math.max(1,...c);
+  const bars=c.map(v=>`<i class="${v?'':'empty'}" style="height:${Math.round(v/mx*100)}%"></i>`).join('');
+  const pm=num(dist.p_max);
+  return `<span class="hist" title="Sold-price spread: ${dist.n} comps, $0–$${pm!==null?pm.toFixed(0):'?'}${dist.n_noise?`, ${dist.n_noise} outlier(s) dropped`:''}">${bars}</span>`;
+}
+function distBlock(dist){
+  if(!dist || !Array.isArray(dist.counts)) return '';
+  const c=dist.counts, mx=Math.max(1,...c), w=num(dist.bucket_width)||0, pm=num(dist.p_max)||0;
+  const cols=c.map((v,i)=>{
+    const lo=(w*i), hi=(i===c.length-1?pm:w*(i+1));
+    const t=`$${lo.toFixed(0)}–$${hi.toFixed(0)}: ${v} sold`;
+    return `<div class="col" title="${t}"><span class="cn">${v||''}</span><b class="${v?'':'empty'}" style="height:${Math.round(v/mx*100)}%"></b></div>`;
+  }).join('');
+  return `<div class="distbox">
+    <div class="dl">Sold-price distribution · ${dist.n} comps${dist.n_noise?` · ${dist.n_noise} outlier(s) dropped`:''}</div>
+    <div class="dhist">${cols}</div>
+    <div class="daxis"><span>$0</span><span>$${pm.toFixed(0)}</span></div>
+  </div>`;
+}
 
 document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{
   const k=th.dataset.k;
@@ -445,6 +481,7 @@ function openDetail(i, fromPop){
         <div class="d-dots" id="dDots">${d._imgs.map((_,j)=>`<span class="d-dot" data-i="${j}"></span>`).join('')}</div>`:''}
     </div>
     <table class="d-fields"><tbody>${fields}</tbody></table>
+    ${distBlock(d.ebay_price_dist)}
     ${sellerLinks(d.title)}`;
   detail.hidden=false; document.body.style.overflow='hidden';
   initDSlider(d._imgs);
