@@ -20,6 +20,10 @@
   input[type=search], select { background:var(--card); border:1px solid var(--line); color:var(--fg);
           border-radius:8px; padding:8px 10px; font-size:14px; }
   input[type=search] { min-width:240px; flex:1; }
+  .clearbtn { background:var(--card); border:1px solid var(--line); color:var(--mut);
+    border-radius:8px; padding:8px 11px; font-size:14px; line-height:1; cursor:pointer; }
+  .clearbtn:hover { color:var(--fg); border-color:var(--mut); }
+  .clearbtn.hidden { display:none; }
   main { padding:16px 24px 60px; }
   table { border-collapse:collapse; width:100%; }
   th,td { padding:8px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:middle; }
@@ -156,6 +160,7 @@
     <option value="error">Has error</option>
     <option value="none">Not published</option>
   </select>
+  <button type="button" id="clear" class="clearbtn" title="Clear all filters" aria-label="Clear filters">✕</button>
   <span class="muted" id="count"></span>
 </div>
 <main>
@@ -230,6 +235,7 @@ function syncURL(){
   if(mp) p.set('status', mp);
   const qs=p.toString();
   history.replaceState(history.state, '', location.pathname + (qs?'?'+qs:'') + (location.hash||''));
+  document.getElementById('clear').classList.toggle('hidden', !(q||cf||mp));  // only show when something is filtered
 }
 
 function renderStats(){
@@ -310,6 +316,12 @@ document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{
 document.getElementById('q').oninput=render;
 document.getElementById('conf').onchange=render;
 document.getElementById('mp').onchange=render;
+document.getElementById('clear').onclick=()=>{               // reset every filter to its default
+  document.getElementById('q').value='';
+  document.getElementById('conf').value='';
+  document.getElementById('mp').value='';
+  render();
+};
 
 /* ---- copy lot id to clipboard (chips in list + modal) ---- */
 function copyText(t){
