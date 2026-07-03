@@ -151,6 +151,11 @@
   .dhist .col b.empty { opacity:.16; }
   .dhist .col .cn { font-size:10px; color:var(--mut); margin-bottom:2px; line-height:1; }
   .daxis { display:flex; justify-content:space-between; color:var(--mut); font-size:11px; margin-top:4px; }
+  .hist i, .dhist .col { cursor:pointer; }
+  #tip { position:fixed; z-index:100; background:#000; color:#fff; border:1px solid var(--line);
+    border-radius:6px; padding:5px 9px; font-size:12px; white-space:nowrap; pointer-events:none;
+    transform:translate(-50%,-100%); box-shadow:0 4px 14px rgba(0,0,0,.5); }
+  #tip[hidden] { display:none; }
 </style>
 </head>
 <body>
@@ -329,7 +334,7 @@ function histInline(dist){
   const c=dist.counts, mx=Math.max(1,...c), w=num(dist.bucket_width)||0, pm=num(dist.p_max)||0;
   const bars=c.map((v,i)=>{
     const lo=w*i, hi=(i===c.length-1?pm:w*(i+1));
-    return `<i class="${v?'':'empty'}" style="height:${Math.round(v/mx*100)}%" title="$${lo.toFixed(0)}–$${hi.toFixed(0)}: ${v} sold"></i>`;
+    return `<i class="${v?'':'empty'}" style="height:${Math.round(v/mx*100)}%" data-tip="$${lo.toFixed(0)}–$${hi.toFixed(0)}: ${v} sold"></i>`;
   }).join('');
   return `<span class="hist" title="Sold-price spread: ${dist.n} comps, $0–$${pm.toFixed(0)}${dist.n_noise?`, ${dist.n_noise} outlier(s) dropped`:''}">${bars}</span>`;
 }
@@ -339,7 +344,7 @@ function distBlock(dist){
   const cols=c.map((v,i)=>{
     const lo=(w*i), hi=(i===c.length-1?pm:w*(i+1));
     const t=`$${lo.toFixed(0)}–$${hi.toFixed(0)}: ${v} sold`;
-    return `<div class="col" title="${t}"><span class="cn">${v||''}</span><b class="${v?'':'empty'}" style="height:${Math.round(v/mx*100)}%"></b></div>`;
+    return `<div class="col" data-tip="${t}"><span class="cn">${v||''}</span><b class="${v?'':'empty'}" style="height:${Math.round(v/mx*100)}%"></b></div>`;
   }).join('');
   return `<div class="distbox">
     <div class="dl">Sold-price distribution · ${dist.n} comps${dist.n_noise?` · ${dist.n_noise} outlier(s) dropped`:''}</div>
@@ -347,6 +352,26 @@ function distBlock(dist){
     <div class="daxis"><span>$0</span><span>$${pm.toFixed(0)}</span></div>
   </div>`;
 }
+// Custom tooltip for histogram buckets — works on TAP (phones, where native
+// title never shows) and on hover. Positioned above the bar, clamped to viewport.
+const tip=document.createElement('div'); tip.id='tip'; tip.hidden=true; document.body.appendChild(tip);
+function showTip(el){
+  const t=el.getAttribute('data-tip'); if(!t) return;
+  tip.textContent=t; tip.hidden=false;
+  const r=el.getBoundingClientRect();
+  let x=r.left+r.width/2, y=r.top-6;
+  const tw=tip.offsetWidth;
+  x=Math.max(tw/2+4, Math.min(x, innerWidth-tw/2-4));   // keep on-screen
+  if(y-tip.offsetHeight<4) y=r.bottom+tip.offsetHeight+6; // flip below if no room above
+  tip.style.left=x+'px'; tip.style.top=y+'px';
+}
+function hideTip(){ tip.hidden=true; }
+// hover (desktop)
+document.addEventListener('mouseover', e=>{ const b=e.target.closest('[data-tip]'); if(b) showTip(b); });
+document.addEventListener('mouseout',  e=>{ const b=e.target.closest('[data-tip]'); if(b) hideTip(); });
+// tapping anywhere that's NOT a bar dismisses it (bar taps stopPropagation before this)
+document.addEventListener('click', e=>{ if(!e.target.closest('[data-tip]')) hideTip(); });
+addEventListener('scroll', hideTip, true);   // stale position on scroll → hide
 
 document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{
   const k=th.dataset.k;
@@ -398,6 +423,8 @@ function lbPrev(){ lbIdx=(lbIdx-1+lbList.length)%lbList.length; lbShow(); }
 function lbClose(){ lb.hidden=true; lbImg.src=''; document.body.style.overflow=detail.hidden?'':'hidden'; }
 
 document.getElementById('rows').addEventListener('click', e=>{
+  const bar=e.target.closest('[data-tip]');         // histogram bar → tooltip, not the modal
+  if(bar){ e.stopPropagation(); showTip(bar); return; }
   const el=e.target.closest('.lb');
   if(el){ const imgs=(el.dataset.imgs||'').split(',').filter(Boolean);
     if(imgs.length) lbOpen(imgs, +el.dataset.idx||0); return; }
@@ -527,7 +554,9 @@ function closeDetail(fromPop){
   else if(lotFromHash()!=null){ history.replaceState(null,'',location.pathname+location.search); } // deep-linked → clean hash
 }
 function openLot(id){ const idx=DATA.findIndex(d=>d.lot_id===+id); if(idx>=0) openDetail(idx); }
-dBody.addEventListener('click', e=>{ const r=e.target.closest('.lotref'); if(r){ e.stopPropagation(); openLot(r.dataset.lot); } });
+dBody.addEventListener('click', e=>{
+  const bar=e.target.closest('[data-tip]'); if(bar){ e.stopPropagation(); showTip(bar); return; }
+  const r=e.target.closest('.lotref'); if(r){ e.stopPropagation(); openLot(r.dataset.lot); } });
 document.getElementById('dX').onclick=()=>closeDetail();
 detail.addEventListener('click', e=>{ if(e.target===detail) closeDetail(); });
 // Back/Forward: sync the modal to the URL hash (party-scout pattern)
