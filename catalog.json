@@ -31,7 +31,18 @@
      1
     ]
    },
-   "marketplaces": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137479712",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626201044.jpg"
@@ -103,7 +114,21 @@
      2
     ]
    },
-   "marketplaces": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "error",
+     "error": "stuck_form (seen ['sell_landing', 'prelist_suggest', 'prelist_identify', 'listing_form', 'listing_form', 'listing_form', 'listing_form'])",
+     "ref": null,
+     "sku": null,
+     "generated_fields": {
+      "category": "Gift Cards & Coupons > Gift Cards",
+      "Brand": "Roblox (auto)",
+      "Type": "Mixed Lot (auto)",
+      "Expiration Year": "Does Not Apply (auto)",
+      "Expiration Month": "Does Not Apply (auto)"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626195413.jpg",
@@ -375,8 +400,38 @@
    "ship_est_usd": 10,
    "n_offers": 2,
    "net_ebay": 88.85,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 110.0,
+    "bucket_width": 11.0,
+    "n": 3,
+    "n_noise": 0,
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     2
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137383920",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New without boxBrand new",
+      "Color": "Multicolor (auto)",
+      "Upper Material": "Synthetic (auto)"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626204024.jpg",
@@ -395,8 +450,37 @@
    "ship_est_usd": 9,
    "n_offers": 22,
    "net_ebay": 87.28,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 144.99,
+    "bucket_width": 14.499,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     0,
+     0,
+     4,
+     6,
+     4,
+     2,
+     10,
+     5,
+     5,
+     4
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137407421",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New",
+      "Brand": "Apple"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626202009.jpg",
@@ -434,7 +518,20 @@
      3
     ]
    },
-   "marketplaces": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137360245",
+     "sku": null,
+     "generated_fields": {
+      "category": "Clothing, Shoes & Accessories > Men > Men's Accessories > Ba",
+      "condition": "Pre-owned - Good",
+      "Brand": "Oakley",
+      "Style": "Standard (auto)"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626201314.jpg",
@@ -496,8 +593,36 @@
    "ship_est_usd": 15,
    "n_offers": 14,
    "net_ebay": 77.53,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 179.0,
+    "bucket_width": 17.9,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     7,
+     2,
+     3,
+     5,
+     3,
+     15,
+     3,
+     1,
+     0,
+     1
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137425720",
+     "sku": null,
+     "generated_fields": {
+      "condition": "Good",
+      "Movie/TV Title": "Assorted Titles (auto)"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626202303.jpg"
@@ -607,8 +732,38 @@
    "ship_est_usd": 4,
    "n_offers": 34,
    "net_ebay": 48.98,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 185.0,
+    "bucket_width": 18.5,
+    "n": 31,
+    "n_noise": 2,
+    "counts": [
+     4,
+     3,
+     9,
+     4,
+     1,
+     4,
+     0,
+     2,
+     1,
+     3
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137432003",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Pre-owned - GoodGently u",
+      "Brand": "Kate Spade",
+      "Exterior Color": "Does Not Apply (auto)"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626204543.jpg",
@@ -725,8 +880,37 @@
    "ship_est_usd": 4,
    "n_offers": 29,
    "net_ebay": 112.0,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 85.0,
+    "bucket_width": 8.5,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     1,
+     1,
+     11,
+     6,
+     5,
+     6,
+     1,
+     1,
+     2,
+     5
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137453127",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Pre-owned - GoodGently u",
+      "Brand": "Coach"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626204329.jpg"
@@ -744,8 +928,37 @@
    "ship_est_usd": 9,
    "n_offers": 16,
    "net_ebay": 28.84,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 106.99,
+    "bucket_width": 10.699,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     2,
+     5,
+     7,
+     6,
+     9,
+     3,
+     4,
+     1,
+     0,
+     3
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137481283",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New",
+      "Brand": "Apple"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626202845.jpg",
@@ -764,8 +977,37 @@
    "ship_est_usd": 9,
    "n_offers": 31,
    "net_ebay": 27.24,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 61.97,
+    "bucket_width": 6.197,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     0,
+     1,
+     5,
+     6,
+     6,
+     3,
+     6,
+     6,
+     5,
+     2
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137483794",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New",
+      "Brand": "Starbucks"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626200342.jpg",
@@ -785,8 +1027,36 @@
    "ship_est_usd": 9,
    "n_offers": 31,
    "net_ebay": 25.55,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 95.96,
+    "bucket_width": 9.596,
+    "n": 12,
+    "n_noise": 0,
+    "counts": [
+     0,
+     1,
+     2,
+     4,
+     0,
+     0,
+     2,
+     1,
+     0,
+     2
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137487987",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626200432.jpg"
@@ -804,8 +1074,37 @@
    "ship_est_usd": 9,
    "n_offers": 15,
    "net_ebay": 24.63,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 79.99,
+    "bucket_width": 7.999,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     1,
+     12,
+     8,
+     2,
+     5,
+     4,
+     1,
+     4,
+     1,
+     1
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137487120",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Used",
+      "Brand": "Does Not Apply (auto)"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626201402.jpg"
@@ -823,8 +1122,36 @@
    "ship_est_usd": 4,
    "n_offers": 8,
    "net_ebay": 22.49,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 51.98,
+    "bucket_width": 5.198,
+    "n": 33,
+    "n_noise": 7,
+    "counts": [
+     0,
+     0,
+     3,
+     2,
+     3,
+     3,
+     3,
+     4,
+     7,
+     8
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137490581",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Used"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626200908.jpg"
@@ -842,8 +1169,35 @@
    "ship_est_usd": 10,
    "n_offers": 28,
    "net_ebay": 18.49,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 66.0,
+    "bucket_width": 6.6,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     2,
+     5,
+     4,
+     8,
+     7,
+     5,
+     4,
+     0,
+     0,
+     2
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137489430",
+     "sku": null,
+     "generated_fields": {
+      "category": "Entertainment Memorabilia > Music Memorabilia > Other Music "
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626204156.jpg"
@@ -861,8 +1215,36 @@
    "ship_est_usd": 9,
    "n_offers": 13,
    "net_ebay": 18.79,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 95.0,
+    "bucket_width": 9.5,
+    "n": 35,
+    "n_noise": 5,
+    "counts": [
+     6,
+     9,
+     4,
+     4,
+     2,
+     3,
+     1,
+     1,
+     1,
+     4
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137510601",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Pre-owned - GoodGently u"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626194224.jpg"
@@ -880,8 +1262,36 @@
    "ship_est_usd": 10,
    "n_offers": 22,
    "net_ebay": 15.72,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 54.86,
+    "bucket_width": 5.486,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     0,
+     1,
+     6,
+     12,
+     6,
+     4,
+     6,
+     4,
+     0,
+     1
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137505181",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New with box"
+     }
+    }
+   },
    "condition": "New with tags",
    "images": [
     "IMG20260626204052.jpg"
@@ -899,8 +1309,36 @@
    "ship_est_usd": 15,
    "n_offers": 14,
    "net_ebay": 18.04,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 60.0,
+    "bucket_width": 6.0,
+    "n": 35,
+    "n_noise": 5,
+    "counts": [
+     1,
+     9,
+     5,
+     3,
+     6,
+     3,
+     2,
+     2,
+     2,
+     2
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137514077",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Used"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626194453.jpg",
@@ -920,8 +1358,37 @@
    "ship_est_usd": 9,
    "n_offers": 20,
    "net_ebay": 15.28,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 45.0,
+    "bucket_width": 4.5,
+    "n": 38,
+    "n_noise": 2,
+    "counts": [
+     0,
+     2,
+     2,
+     5,
+     7,
+     11,
+     6,
+     1,
+     2,
+     2
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137503830",
+     "sku": null,
+     "generated_fields": {
+      "category": "Video Games & Consoles > Video Game Merchandise",
+      "condition": "New",
+      "Brand": "Nintendo"
+     }
+    }
+   },
    "condition": "New with tags",
    "images": [
     "IMG20260626203702.jpg"
@@ -939,8 +1406,37 @@
    "ship_est_usd": 9,
    "n_offers": 20,
    "net_ebay": 16.65,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 55.99,
+    "bucket_width": 5.599,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     0,
+     1,
+     10,
+     9,
+     6,
+     2,
+     5,
+     3,
+     1,
+     2
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137508231",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Used",
+      "Brand": "Starbucks (custom)"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626201847.jpg"
@@ -958,8 +1454,36 @@
    "ship_est_usd": 9,
    "n_offers": 22,
    "net_ebay": 14.76,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 43.99,
+    "bucket_width": 4.399,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     1,
+     0,
+     5,
+     6,
+     6,
+     5,
+     10,
+     3,
+     1,
+     3
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137501262",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Used"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626200107.jpg"
@@ -977,8 +1501,36 @@
    "ship_est_usd": 9,
    "n_offers": 24,
    "net_ebay": 18.02,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 69.99,
+    "bucket_width": 6.999,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     1,
+     2,
+     13,
+     6,
+     5,
+     6,
+     0,
+     0,
+     0,
+     4
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137525426",
+     "sku": null,
+     "generated_fields": {
+      "category": "Collectibles > Disneyana > Contemporary (1968-Now) > Jewelry",
+      "condition": "New"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626200125.jpg"
@@ -996,7 +1548,24 @@
    "ship_est_usd": 8,
    "n_offers": 24,
    "net_ebay": 13.72,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 249.95,
+    "bucket_width": 24.995,
+    "n": 34,
+    "n_noise": 6,
+    "counts": [
+     21,
+     5,
+     0,
+     2,
+     2,
+     0,
+     1,
+     0,
+     2,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1015,8 +1584,37 @@
    "ship_est_usd": 9,
    "n_offers": 30,
    "net_ebay": 13.2,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 39.99,
+    "bucket_width": 3.999,
+    "n": 38,
+    "n_noise": 2,
+    "counts": [
+     0,
+     2,
+     3,
+     8,
+     4,
+     8,
+     5,
+     1,
+     1,
+     6
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137519401",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New",
+      "Type": "Mixed Lot (auto)"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626200419.jpg"
@@ -1034,8 +1632,36 @@
    "ship_est_usd": 15,
    "n_offers": 34,
    "net_ebay": 11.81,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 89.99,
+    "bucket_width": 8.999,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     6,
+     12,
+     8,
+     2,
+     1,
+     2,
+     2,
+     2,
+     1,
+     1
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137512363",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Used"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626200141.jpg"
@@ -1110,7 +1736,24 @@
    "ship_est_usd": 6,
    "n_offers": 15,
    "net_ebay": 14.48,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 104.43,
+    "bucket_width": 10.443,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     8,
+     9,
+     7,
+     1,
+     0,
+     4,
+     5,
+     3,
+     0,
+     3
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1129,7 +1772,24 @@
    "ship_est_usd": 15,
    "n_offers": 10,
    "net_ebay": 13.43,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 62.99,
+    "bucket_width": 6.299,
+    "n": 35,
+    "n_noise": 5,
+    "counts": [
+     3,
+     5,
+     6,
+     4,
+     7,
+     6,
+     1,
+     0,
+     2,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -1150,7 +1810,24 @@
    "ship_est_usd": 8,
    "n_offers": 29,
    "net_ebay": 12.04,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 84.99,
+    "bucket_width": 8.499,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     4,
+     14,
+     7,
+     3,
+     2,
+     2,
+     0,
+     2,
+     1,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1169,8 +1846,37 @@
    "ship_est_usd": 10,
    "n_offers": 20,
    "net_ebay": 10.38,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 29.99,
+    "bucket_width": 2.999,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     0,
+     0,
+     1,
+     2,
+     5,
+     3,
+     11,
+     11,
+     4,
+     2
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137537206",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Used",
+      "Type": "Mixed Lot (auto)"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626202934.jpg"
@@ -1188,8 +1894,36 @@
    "ship_est_usd": 9,
    "n_offers": 32,
    "net_ebay": 10.22,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 39.0,
+    "bucket_width": 3.9,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     0,
+     1,
+     3,
+     10,
+     2,
+     9,
+     5,
+     5,
+     0,
+     2
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137529864",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Used"
+     }
+    }
+   },
    "condition": "Pre-owned - Excellent",
    "images": [
     "IMG20260626195220.jpg",
@@ -1208,7 +1942,24 @@
    "ship_est_usd": 4,
    "n_offers": 27,
    "net_ebay": 11.34,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 30.0,
+    "bucket_width": 3.0,
+    "n": 36,
+    "n_noise": 4,
+    "counts": [
+     0,
+     1,
+     4,
+     4,
+     4,
+     4,
+     12,
+     1,
+     4,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -1229,7 +1980,24 @@
    "ship_est_usd": 10,
    "n_offers": 27,
    "net_ebay": 8.63,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 90.0,
+    "bucket_width": 9.0,
+    "n": 34,
+    "n_noise": 6,
+    "counts": [
+     0,
+     7,
+     12,
+     4,
+     3,
+     5,
+     2,
+     0,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Excellent",
    "images": [
@@ -1248,7 +2016,24 @@
    "ship_est_usd": 8,
    "n_offers": 25,
    "net_ebay": 10.1,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 31.99,
+    "bucket_width": 3.199,
+    "n": 35,
+    "n_noise": 5,
+    "counts": [
+     0,
+     4,
+     3,
+     3,
+     6,
+     4,
+     8,
+     3,
+     1,
+     3
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1267,7 +2052,24 @@
    "ship_est_usd": 6,
    "n_offers": 15,
    "net_ebay": 12.0,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 53.24,
+    "bucket_width": 5.324,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     2,
+     6,
+     7,
+     8,
+     4,
+     5,
+     5,
+     0,
+     0,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1286,7 +2088,24 @@
    "ship_est_usd": 8,
    "n_offers": 32,
    "net_ebay": 8.22,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 60.91,
+    "bucket_width": 6.091,
+    "n": 36,
+    "n_noise": 4,
+    "counts": [
+     4,
+     7,
+     7,
+     5,
+     6,
+     2,
+     2,
+     2,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New with imperfections",
    "images": [
@@ -1305,7 +2124,24 @@
    "ship_est_usd": 8,
    "n_offers": 29,
    "net_ebay": 9.99,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 40.0,
+    "bucket_width": 4.0,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     0,
+     9,
+     7,
+     2,
+     3,
+     2,
+     1,
+     3,
+     4,
+     8
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1324,7 +2160,24 @@
    "ship_est_usd": 9,
    "n_offers": 23,
    "net_ebay": 6.87,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 50.0,
+    "bucket_width": 5.0,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     1,
+     11,
+     4,
+     8,
+     4,
+     6,
+     2,
+     2,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1343,7 +2196,24 @@
    "ship_est_usd": 9,
    "n_offers": 10,
    "net_ebay": 8.86,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 40.0,
+    "bucket_width": 4.0,
+    "n": 38,
+    "n_noise": 2,
+    "counts": [
+     1,
+     3,
+     9,
+     11,
+     5,
+     2,
+     1,
+     4,
+     1,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1362,7 +2232,24 @@
    "ship_est_usd": 8,
    "n_offers": 23,
    "net_ebay": 6.9,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 40.0,
+    "bucket_width": 4.0,
+    "n": 36,
+    "n_noise": 4,
+    "counts": [
+     1,
+     6,
+     8,
+     7,
+     6,
+     0,
+     2,
+     4,
+     0,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1381,7 +2268,24 @@
    "ship_est_usd": 6,
    "n_offers": 24,
    "net_ebay": 8.43,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 21.99,
+    "bucket_width": 2.199,
+    "n": 33,
+    "n_noise": 7,
+    "counts": [
+     1,
+     2,
+     0,
+     3,
+     5,
+     4,
+     15,
+     0,
+     0,
+     3
+    ]
+   },
    "marketplaces": null,
    "condition": "New with imperfections",
    "images": [
@@ -1400,7 +2304,24 @@
    "ship_est_usd": 9,
    "n_offers": 16,
    "net_ebay": 5.17,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 28.99,
+    "bucket_width": 2.899,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     1,
+     1,
+     8,
+     6,
+     7,
+     5,
+     5,
+     2,
+     3,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -1419,7 +2340,24 @@
    "ship_est_usd": 9,
    "n_offers": 25,
    "net_ebay": 6.2,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 49.95,
+    "bucket_width": 4.995,
+    "n": 33,
+    "n_noise": 7,
+    "counts": [
+     7,
+     9,
+     7,
+     5,
+     2,
+     2,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1438,7 +2376,24 @@
    "ship_est_usd": 8,
    "n_offers": 20,
    "net_ebay": 5.43,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 60.0,
+    "bucket_width": 6.0,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     11,
+     6,
+     6,
+     1,
+     4,
+     1,
+     1,
+     2,
+     4,
+     4
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Excellent",
    "images": [
@@ -1457,7 +2412,24 @@
    "ship_est_usd": 9,
    "n_offers": 24,
    "net_ebay": 6.0,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 25.0,
+    "bucket_width": 2.5,
+    "n": 33,
+    "n_noise": 7,
+    "counts": [
+     0,
+     1,
+     4,
+     10,
+     7,
+     5,
+     4,
+     1,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1476,7 +2448,24 @@
    "ship_est_usd": 9,
    "n_offers": 22,
    "net_ebay": 5.01,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 34.99,
+    "bucket_width": 3.499,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     0,
+     5,
+     9,
+     7,
+     3,
+     7,
+     1,
+     3,
+     0,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1495,7 +2484,24 @@
    "ship_est_usd": 8,
    "n_offers": 19,
    "net_ebay": 3.9,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 30.0,
+    "bucket_width": 3.0,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     2,
+     3,
+     2,
+     13,
+     4,
+     3,
+     3,
+     4,
+     1,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1514,7 +2520,24 @@
    "ship_est_usd": 8,
    "n_offers": 22,
    "net_ebay": 4.54,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 25.0,
+    "bucket_width": 2.5,
+    "n": 36,
+    "n_noise": 4,
+    "counts": [
+     3,
+     5,
+     5,
+     3,
+     7,
+     8,
+     1,
+     1,
+     0,
+     3
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1533,7 +2556,24 @@
    "ship_est_usd": 8,
    "n_offers": 21,
    "net_ebay": 1.01,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 20.0,
+    "bucket_width": 2.0,
+    "n": 36,
+    "n_noise": 4,
+    "counts": [
+     0,
+     1,
+     1,
+     4,
+     5,
+     11,
+     5,
+     6,
+     1,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1552,7 +2592,24 @@
    "ship_est_usd": 8,
    "n_offers": 22,
    "net_ebay": 1.11,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 25.0,
+    "bucket_width": 2.5,
+    "n": 36,
+    "n_noise": 4,
+    "counts": [
+     0,
+     2,
+     7,
+     8,
+     10,
+     6,
+     0,
+     2,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1571,7 +2628,24 @@
    "ship_est_usd": 8,
    "n_offers": 29,
    "net_ebay": -0.04,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 19.99,
+    "bucket_width": 1.999,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     2,
+     4,
+     5,
+     3,
+     14,
+     3,
+     3,
+     1,
+     1,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1590,7 +2664,24 @@
    "ship_est_usd": 6,
    "n_offers": 21,
    "net_ebay": 2.6,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 16.0,
+    "bucket_width": 1.6,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     4,
+     4,
+     3,
+     2,
+     6,
+     4,
+     9,
+     5,
+     0,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1609,7 +2700,24 @@
    "ship_est_usd": 4,
    "n_offers": 4,
    "net_ebay": 1.79,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 19.99,
+    "bucket_width": 1.999,
+    "n": 38,
+    "n_noise": 2,
+    "counts": [
+     0,
+     0,
+     2,
+     13,
+     7,
+     3,
+     2,
+     4,
+     4,
+     3
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -1628,7 +2736,24 @@
    "ship_est_usd": 8,
    "n_offers": 23,
    "net_ebay": -0.35,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 20.0,
+    "bucket_width": 2.0,
+    "n": 38,
+    "n_noise": 2,
+    "counts": [
+     6,
+     2,
+     3,
+     7,
+     7,
+     4,
+     3,
+     3,
+     0,
+     3
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1647,7 +2772,24 @@
    "ship_est_usd": 4,
    "n_offers": 28,
    "net_ebay": 0.14,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 30.0,
+    "bucket_width": 3.0,
+    "n": 36,
+    "n_noise": 4,
+    "counts": [
+     2,
+     12,
+     2,
+     10,
+     3,
+     4,
+     2,
+     0,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1666,7 +2808,24 @@
    "ship_est_usd": 8,
    "n_offers": 23,
    "net_ebay": 0.5,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 18.99,
+    "bucket_width": 1.899,
+    "n": 38,
+    "n_noise": 2,
+    "counts": [
+     4,
+     6,
+     3,
+     6,
+     4,
+     4,
+     2,
+     6,
+     1,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Excellent",
    "images": [
@@ -1685,8 +2844,35 @@
    "ship_est_usd": 6,
    "n_offers": 27,
    "net_ebay": 281.05,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 429.66,
+    "bucket_width": 42.966,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     1,
+     9,
+     1,
+     1,
+     6,
+     7,
+     4,
+     2,
+     5,
+     4
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137232657",
+     "sku": null,
+     "generated_fields": {
+      "condition": "Pre-owned - Good"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626201529.jpg",
@@ -1705,8 +2891,32 @@
    "ship_est_usd": 6,
    "n_offers": 11,
    "net_ebay": 187.49,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 193.81,
+    "bucket_width": 19.381,
+    "n": 1,
+    "n_noise": 0,
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "127952150671",
+     "sku": null
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626195714.jpg",
@@ -1727,8 +2937,37 @@
    "ship_est_usd": 10,
    "n_offers": 25,
    "net_ebay": 122.11,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 200.0,
+    "bucket_width": 20.0,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     0,
+     0,
+     1,
+     0,
+     4,
+     11,
+     9,
+     7,
+     3,
+     4
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137326889",
+     "sku": null,
+     "generated_fields": {
+      "condition": "Pre-owned - Good",
+      "catalog_match": "skipped",
+      "Type": "Camcorder (custom)"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626201620.jpg",
@@ -1797,8 +3036,37 @@
    "ship_est_usd": 9,
    "n_offers": 14,
    "net_ebay": 107.76,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 375.0,
+    "bucket_width": 37.5,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     7,
+     9,
+     6,
+     4,
+     3,
+     4,
+     2,
+     0,
+     0,
+     2
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137449076",
+     "sku": null,
+     "generated_fields": {
+      "category": "Consumer Electronics > Mixed Lots",
+      "condition": "Used",
+      "Brand": "Apple"
+     }
+    }
+   },
    "condition": "Pre-owned - Fair",
    "images": [
     "IMG20260626202634.jpg",
@@ -1838,7 +3106,20 @@
      1
     ]
    },
-   "marketplaces": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137351765",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Pre-owned - Good",
+      "Brand": "Oakley",
+      "Frame Color": "Black (auto)"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626204123.jpg",
@@ -1857,8 +3138,36 @@
    "ship_est_usd": 9,
    "n_offers": 29,
    "net_ebay": 62.09,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 130.0,
+    "bucket_width": 13.0,
+    "n": 7,
+    "n_noise": 1,
+    "counts": [
+     0,
+     1,
+     0,
+     0,
+     3,
+     0,
+     2,
+     0,
+     0,
+     1
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137427999",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New"
+     }
+    }
+   },
    "condition": "New with tags",
    "images": [
     "IMG20260626195636.jpg"
@@ -1876,8 +3185,38 @@
    "ship_est_usd": 9,
    "n_offers": 10,
    "net_ebay": 39.17,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 64.99,
+    "bucket_width": 6.499,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     0,
+     6,
+     5,
+     1,
+     3,
+     4,
+     5,
+     10,
+     2,
+     1
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137434239",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New",
+      "Brand": "Does Not Apply (auto)",
+      "Type": "Mixed Lot (auto)"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626195615.jpg",
@@ -1896,8 +3235,37 @@
    "ship_est_usd": 9,
    "n_offers": 24,
    "net_ebay": 30.01,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 98.95,
+    "bucket_width": 9.895,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     0,
+     0,
+     11,
+     9,
+     4,
+     3,
+     4,
+     1,
+     4,
+     4
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137475760",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Used",
+      "Type": "Mixed Lot (auto)"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626201548.jpg",
@@ -1916,8 +3284,37 @@
    "ship_est_usd": 9,
    "n_offers": 4,
    "net_ebay": 26.01,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 59.0,
+    "bucket_width": 5.9,
+    "n": 38,
+    "n_noise": 2,
+    "counts": [
+     0,
+     6,
+     4,
+     3,
+     6,
+     4,
+     7,
+     0,
+     3,
+     5
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137485855",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Used",
+      "Brand": "Does Not Apply (auto)"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626201106.jpg"
@@ -1935,7 +3332,24 @@
    "ship_est_usd": 8,
    "n_offers": 2,
    "net_ebay": 18.27,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 29.99,
+    "bucket_width": 2.999,
+    "n": 4,
+    "n_noise": 0,
+    "counts": [
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -1954,8 +3368,32 @@
    "ship_est_usd": 6,
    "n_offers": 21,
    "net_ebay": 14.98,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 111.11,
+    "bucket_width": 11.111,
+    "n": 35,
+    "n_noise": 5,
+    "counts": [
+     4,
+     8,
+     11,
+     4,
+     2,
+     2,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137498747",
+     "sku": null
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626195343.jpg",
@@ -1976,8 +3414,37 @@
    "ship_est_usd": 9,
    "n_offers": 27,
    "net_ebay": 15.85,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 45.0,
+    "bucket_width": 4.5,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     0,
+     0,
+     2,
+     11,
+     6,
+     7,
+     4,
+     4,
+     3,
+     2
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137506673",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New",
+      "Brand": "Starbucks"
+     }
+    }
+   },
    "condition": "New with tags",
    "images": [
     "IMG20260626195952.jpg",
@@ -1996,8 +3463,36 @@
    "ship_est_usd": 15,
    "n_offers": 23,
    "net_ebay": 14.98,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 50.0,
+    "bucket_width": 5.0,
+    "n": 34,
+    "n_noise": 6,
+    "counts": [
+     1,
+     6,
+     5,
+     4,
+     6,
+     6,
+     2,
+     1,
+     2,
+     1
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137500129",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "Used"
+     }
+    }
+   },
    "condition": "Pre-owned - Good",
    "images": [
     "IMG20260626202114.jpg"
@@ -2015,8 +3510,31 @@
    "ship_est_usd": 6,
    "n_offers": 24,
    "net_ebay": 18.58,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 99.99,
+    "bucket_width": 9.999,
+    "n": 24,
+    "n_noise": 0,
+    "counts": [
+     4,
+     5,
+     7,
+     0,
+     2,
+     1,
+     2,
+     1,
+     1,
+     1
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "error",
+     "error": "eBay policy block: COVID-19 test kits not allowed (banned category)",
+     "ref": null
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626203740.jpg"
@@ -2034,7 +3552,24 @@
    "ship_est_usd": 9,
    "n_offers": 15,
    "net_ebay": 15.9,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 49.5,
+    "bucket_width": 4.95,
+    "n": 33,
+    "n_noise": 7,
+    "counts": [
+     3,
+     1,
+     7,
+     5,
+     7,
+     6,
+     0,
+     1,
+     2,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -2054,8 +3589,36 @@
    "ship_est_usd": 4,
    "n_offers": 14,
    "net_ebay": 14.38,
-   "ebay_price_dist": null,
-   "marketplaces": null,
+   "ebay_price_dist": {
+    "p_max": 35.29,
+    "bucket_width": 3.529,
+    "n": 25,
+    "n_noise": 2,
+    "counts": [
+     0,
+     1,
+     1,
+     7,
+     4,
+     0,
+     4,
+     4,
+     1,
+     3
+    ]
+   },
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137539136",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New with tagsBrand new, "
+     }
+    }
+   },
    "condition": "New with tags",
    "images": [
     "IMG20260626204246.jpg"
@@ -2073,7 +3636,24 @@
    "ship_est_usd": 4,
    "n_offers": 27,
    "net_ebay": 11.42,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 79.0,
+    "bucket_width": 7.9,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     1,
+     11,
+     7,
+     6,
+     3,
+     4,
+     3,
+     2,
+     2,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -2092,7 +3672,24 @@
    "ship_est_usd": 9,
    "n_offers": 5,
    "net_ebay": 12.04,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 38.34,
+    "bucket_width": 3.834,
+    "n": 35,
+    "n_noise": 5,
+    "counts": [
+     0,
+     1,
+     2,
+     1,
+     5,
+     6,
+     5,
+     7,
+     5,
+     3
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -2111,7 +3708,24 @@
    "ship_est_usd": 4,
    "n_offers": 25,
    "net_ebay": 13.74,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 35.0,
+    "bucket_width": 3.5,
+    "n": 34,
+    "n_noise": 6,
+    "counts": [
+     0,
+     0,
+     2,
+     3,
+     8,
+     8,
+     4,
+     6,
+     1,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -2131,7 +3745,24 @@
    "ship_est_usd": 9,
    "n_offers": 5,
    "net_ebay": 13.47,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 43.75,
+    "bucket_width": 4.375,
+    "n": 34,
+    "n_noise": 6,
+    "counts": [
+     0,
+     5,
+     5,
+     5,
+     7,
+     7,
+     3,
+     1,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -2150,7 +3781,24 @@
    "ship_est_usd": 9,
    "n_offers": 2,
    "net_ebay": 7.35,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 40.0,
+    "bucket_width": 4.0,
+    "n": 40,
+    "n_noise": 0,
+    "counts": [
+     1,
+     1,
+     4,
+     11,
+     7,
+     2,
+     1,
+     7,
+     1,
+     5
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -2169,7 +3817,24 @@
    "ship_est_usd": 9,
    "n_offers": 28,
    "net_ebay": 8.51,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 40.99,
+    "bucket_width": 4.099,
+    "n": 36,
+    "n_noise": 4,
+    "counts": [
+     0,
+     1,
+     9,
+     5,
+     10,
+     4,
+     3,
+     1,
+     0,
+     3
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -2189,7 +3854,24 @@
    "ship_est_usd": 15,
    "n_offers": 32,
    "net_ebay": 7.55,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 94.99,
+    "bucket_width": 9.499,
+    "n": 33,
+    "n_noise": 7,
+    "counts": [
+     1,
+     21,
+     1,
+     3,
+     1,
+     1,
+     2,
+     2,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -2209,7 +3891,24 @@
    "ship_est_usd": 9,
    "n_offers": 7,
    "net_ebay": 10.04,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 29.99,
+    "bucket_width": 2.999,
+    "n": 38,
+    "n_noise": 2,
+    "counts": [
+     0,
+     3,
+     2,
+     4,
+     7,
+     8,
+     4,
+     2,
+     5,
+     3
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Excellent",
    "images": [
@@ -2228,7 +3927,24 @@
    "ship_est_usd": 4,
    "n_offers": 10,
    "net_ebay": 10.73,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 100.99,
+    "bucket_width": 10.099,
+    "n": 39,
+    "n_noise": 1,
+    "counts": [
+     3,
+     10,
+     6,
+     3,
+     4,
+     4,
+     3,
+     0,
+     1,
+     5
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -2249,7 +3965,24 @@
    "ship_est_usd": 4,
    "n_offers": 2,
    "net_ebay": 9.33,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 51.18,
+    "bucket_width": 5.118,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     10,
+     10,
+     3,
+     5,
+     2,
+     4,
+     1,
+     1,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -2268,7 +4001,24 @@
    "ship_est_usd": 10,
    "n_offers": 6,
    "net_ebay": 8.94,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 35.0,
+    "bucket_width": 3.5,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     2,
+     4,
+     4,
+     8,
+     4,
+     5,
+     5,
+     2,
+     2,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -2287,7 +4037,24 @@
    "ship_est_usd": 9,
    "n_offers": 10,
    "net_ebay": 6.83,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 24.99,
+    "bucket_width": 2.499,
+    "n": 33,
+    "n_noise": 7,
+    "counts": [
+     0,
+     2,
+     2,
+     4,
+     10,
+     5,
+     5,
+     2,
+     1,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -2306,7 +4073,24 @@
    "ship_est_usd": 9,
    "n_offers": 24,
    "net_ebay": 6.05,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 19.5,
+    "bucket_width": 1.95,
+    "n": 22,
+    "n_noise": 1,
+    "counts": [
+     2,
+     0,
+     1,
+     1,
+     1,
+     3,
+     4,
+     6,
+     2,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "New with imperfections",
    "images": [
@@ -2327,7 +4111,24 @@
    "ship_est_usd": 4,
    "n_offers": 13,
    "net_ebay": 5.73,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 20.0,
+    "bucket_width": 2.0,
+    "n": 37,
+    "n_noise": 3,
+    "counts": [
+     0,
+     2,
+     8,
+     0,
+     7,
+     6,
+     6,
+     3,
+     2,
+     3
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -2346,7 +4147,24 @@
    "ship_est_usd": 6,
    "n_offers": 17,
    "net_ebay": 2.83,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 29.99,
+    "bucket_width": 2.999,
+    "n": 7,
+    "n_noise": 1,
+    "counts": [
+     0,
+     1,
+     2,
+     1,
+     2,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -2366,7 +4184,24 @@
    "ship_est_usd": 8,
    "n_offers": 21,
    "net_ebay": 5.42,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 17.99,
+    "bucket_width": 1.799,
+    "n": 36,
+    "n_noise": 4,
+    "counts": [
+     0,
+     1,
+     3,
+     6,
+     5,
+     10,
+     3,
+     3,
+     4,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -2385,7 +4220,24 @@
    "ship_est_usd": 4,
    "n_offers": 12,
    "net_ebay": 6.17,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 30.0,
+    "bucket_width": 3.0,
+    "n": 34,
+    "n_noise": 6,
+    "counts": [
+     0,
+     0,
+     4,
+     13,
+     4,
+     1,
+     7,
+     2,
+     0,
+     3
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -2404,7 +4256,24 @@
    "ship_est_usd": 15,
    "n_offers": 19,
    "net_ebay": -3.92,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 30.0,
+    "bucket_width": 3.0,
+    "n": 3,
+    "n_noise": 0,
+    "counts": [
+     0,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -2424,7 +4293,24 @@
    "ship_est_usd": 4,
    "n_offers": 36,
    "net_ebay": 4.77,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 14.0,
+    "bucket_width": 1.4,
+    "n": 34,
+    "n_noise": 6,
+    "counts": [
+     0,
+     0,
+     2,
+     2,
+     2,
+     1,
+     6,
+     17,
+     0,
+     4
+    ]
+   },
    "marketplaces": null,
    "condition": "New without tags",
    "images": [
@@ -2443,7 +4329,24 @@
    "ship_est_usd": 6,
    "n_offers": 15,
    "net_ebay": 1.32,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 9.99,
+    "bucket_width": 0.999,
+    "n": 3,
+    "n_noise": 1,
+    "counts": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -2463,7 +4366,24 @@
    "ship_est_usd": 4,
    "n_offers": 26,
    "net_ebay": 2.1,
-   "ebay_price_dist": null,
+   "ebay_price_dist": {
+    "p_max": 16.99,
+    "bucket_width": 1.699,
+    "n": 36,
+    "n_noise": 4,
+    "counts": [
+     0,
+     2,
+     4,
+     6,
+     4,
+     9,
+     4,
+     2,
+     3,
+     2
+    ]
+   },
    "marketplaces": null,
    "condition": "Pre-owned - Good",
    "images": [
@@ -2483,7 +4403,19 @@
    "n_offers": 0,
    "net_ebay": null,
    "ebay_price_dist": null,
-   "marketplaces": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137495110",
+     "sku": null,
+     "generated_fields": {
+      "catalog_match": "skipped",
+      "condition": "New",
+      "Type": "Mixed Lot (auto)"
+     }
+    }
+   },
    "condition": "New without tags",
    "images": [
     "IMG20260626195136.jpg"
@@ -2529,7 +4461,18 @@
    "n_offers": 24,
    "net_ebay": 341.78,
    "ebay_price_dist": null,
-   "marketplaces": null,
+   "marketplaces": {
+    "ebay": {
+     "status": "published",
+     "error": null,
+     "ref": "398137229104",
+     "sku": null,
+     "generated_fields": {
+      "condition": "Pre-owned - Good",
+      "Brand": "Funko"
+     }
+    }
+   },
    "condition": null,
    "images": [
     "IMG20260626195018.jpg",

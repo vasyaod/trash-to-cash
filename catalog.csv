@@ -1,7 +1,7 @@
 lot_id,title,confidence,listing_price,ebay_price_median,ebay_price_n,est_price_old,ship_ebay_usd,ship_est_usd,n_offers,net_ebay,is_bundle,refs,images,condition,ebay_status,ebay_ref
-64,LEGO Star Wars #75248 Resistance A-Wing Starfighter,high,35.0,39.25,40,45,9.99,8,26,29.26,False,,IMG20260626201044.jpg,New without tags,,
+64,LEGO Star Wars #75248 Resistance A-Wing Starfighter,high,35.0,39.25,40,45,9.99,8,26,29.26,False,,IMG20260626201044.jpg,New without tags,published,398137479712
 34,Funko Pop John Cena #59 WWE Invisible Variant,high,43.85,35.48,40,35,8.37,8,28,27.11,False,,IMG20260626194954.jpg,Pre-owned - Excellent,,
-38,Roblox $25 Gift Cards (x2),high,38.0,32.0,40,44,5.84,4,14,26.16,False,,IMG20260626195413.jpg;IMG20260626195406.jpg,New without tags,,
+38,Roblox $25 Gift Cards (x2),high,38.0,32.0,40,44,5.84,4,14,26.16,False,,IMG20260626195413.jpg;IMG20260626195406.jpg,New without tags,error,
 14,Funko Pop Persona 5 #470 Panther,high,37.94,29.99,40,30,7.95,8,27,22.04,False,,IMG20260626194627.jpg,New without tags,,
 87,Casio fx-9750GII USB Power Graphic Graphing Calculator with Cover,high,27.56,20.61,40,22,6.95,10,16,13.66,False,,IMG20260626202824.jpg;IMG20260626202829.jpg,Pre-owned - Good,,
 17,Funko Pop Alien 40th Anniversary #731 Xenomorph,high,27.24,17.82,40,13,9.42,8,29,8.4,False,,IMG20260626194653.jpg,New without tags,,
@@ -9,39 +9,39 @@ lot_id,title,confidence,listing_price,ebay_price_median,ebay_price_n,est_price_o
 25,Funko Pop Marvel Studios 10 Years #375 Iron Man (Gold Chrome),high,20.05,11.99,40,10,8.06,8,33,3.93,False,,IMG20260626194810.jpg,New without tags,,
 30,Funko Pop Venom #513 Venomized Daredevil,high,20.7,11.28,40,10,9.42,8,30,1.86,False,,IMG20260626194916.jpg,New without tags,,
 21,Funko Pop Black Panther #276 Shuri,high,17.66,10.71,40,8,6.95,4,22,3.76,False,,IMG20260626194728.jpg,New without tags,,
-100,Tory Burch Tennis Ball Slide Sandal Fluo Yellow/Off White Size 7 (Style 44283) — New in Box,med,120.0,99.0,3,75,10.15,10,2,88.85,False,,IMG20260626204024.jpg;IMG20260626204034.jpg,New without tags,,
-80,"Apple TV 4K (2nd Gen) 64GB — Model A1842, Original Box with Accessories",med,90.0,97.5,40,65,10.22,9,22,87.28,False,,IMG20260626202009.jpg;IMG20260626202024.jpg;IMG20260626202015.jpg,New without tags,,
-71,Oakley Tactical Field Gear Standard Issue MOLLE Tablet Bag — Black,med,30.0,97.0,40,50,12.95,10,32,84.05,False,,IMG20260626201314.jpg;IMG20260626201317.jpg,Pre-owned - Good,,
+100,Tory Burch Tennis Ball Slide Sandal Fluo Yellow/Off White Size 7 (Style 44283) — New in Box,med,120.0,99.0,3,75,10.15,10,2,88.85,False,,IMG20260626204024.jpg;IMG20260626204034.jpg,New without tags,published,398137383920
+80,"Apple TV 4K (2nd Gen) 64GB — Model A1842, Original Box with Accessories",med,90.0,97.5,40,65,10.22,9,22,87.28,False,,IMG20260626202009.jpg;IMG20260626202024.jpg;IMG20260626202015.jpg,New without tags,published,398137407421
+71,Oakley Tactical Field Gear Standard Issue MOLLE Tablet Bag — Black,med,30.0,97.0,40,50,12.95,10,32,84.05,False,,IMG20260626201314.jpg;IMG20260626201317.jpg,Pre-owned - Good,published,398137360245
 39,Ray-Ban Sunglasses — Coral/Red Frame with Case,med,90.0,94.25,40,50,6.24,6,30,88.01,False,,IMG20260626195446.jpg;IMG20260626195500.jpg,New without tags,published,398133159288
-84,Blu-ray / DVD / PS4 Game Lot (16 Movies + 2 Games),med,90.0,87.5,40,25,9.97,15,14,77.53,False,,IMG20260626202303.jpg,Pre-owned - Good,,
+84,Blu-ray / DVD / PS4 Game Lot (16 Movies + 2 Games),med,90.0,87.5,40,25,9.97,15,14,77.53,False,,IMG20260626202303.jpg,Pre-owned - Good,published,398137425720
 92,The North Face ThermoBall Hooded Jacket Men's XL Black,med,80.0,72.5,40,55,10.43,10,19,62.07,False,,IMG20260626203602.jpg;IMG20260626203608.jpg,Pre-owned - Good,published,398133210169
 99,Tory Burch Weston Flat Espadrille Canvas/Calf Leather Natural/Black Size 6.5 (Style 40034) — New in Box,med,90.0,63.0,29,95,10.8,10,28,52.2,False,,IMG20260626203942.jpg;IMG20260626203948.jpg;IMG20260626204017.jpg,New without tags,published,398133618835
-110,Kate Spade Mint Perforated Tote Bag with Matching Wallet and Dust Bag,med,95.0,61.5,32,65,12.52,4,34,48.98,False,,IMG20260626204543.jpg;IMG20260626204459.jpg;IMG20260626204507.jpg;IMG20260626204429.jpg;IMG20260626204423.jpg,Pre-owned - Good,,
+110,Kate Spade Mint Perforated Tote Bag with Matching Wallet and Dust Bag,med,95.0,61.5,32,65,12.52,4,34,48.98,False,,IMG20260626204543.jpg;IMG20260626204459.jpg;IMG20260626204507.jpg;IMG20260626204429.jpg;IMG20260626204423.jpg,Pre-owned - Good,published,398137432003
 95,Mibro RC Robot Toy with Controller and Carrying Case,med,65.18,55.0,29,20,10.18,9,16,44.82,False,,IMG20260626203728.jpg,Pre-owned - Good,published,398133610702
 111,Lacoste Peacoat Backpack (New with Tags),med,60.0,52.5,40,60,10.75,10,24,41.75,False,,IMG20260626204627.jpg;IMG20260626204618.jpg;IMG20260626204629.jpg,New with tags,published,398133645324
-107,Coach Black Leather Slim Card Case Wallet — Used,med,120.0,45.48,40,18,8.0,4,29,112.0,False,,IMG20260626204329.jpg,Pre-owned - Good,,
-88,Apple iPhone 11 Pro Smart Battery Case Pink Sand (MWVN3LL/A) — Open Box,med,35.0,41.49,40,38,6.16,9,16,28.84,False,,IMG20260626202845.jpg;IMG20260626202849.jpg,New without tags,,
-57,Starbucks Pike Place 12oz Stainless Steel Tumbler,med,110.0,36.44,40,25,9.2,9,31,27.24,False,,IMG20260626200342.jpg;IMG20260626200329.jpg;IMG20260626200315.jpg,New without tags,,
-59,Mighty Beanz Slammer Time Race Track Set,med,45.0,35.0,11,30,9.45,9,31,25.55,False,,IMG20260626200432.jpg,New without tags,,
-72,"Bluetooth Karaoke Microphone with Built-In Speaker — Pink, Hard Case",med,15.0,34.57,40,15,9.94,9,15,24.63,False,,IMG20260626201402.jpg,Pre-owned - Good,,
-62,Disney Pins Lanyard Collection with Extras,med,200.0,30.48,40,22,7.99,4,8,22.49,False,,IMG20260626200908.jpg,Pre-owned - Good,,
-103,BT21 x BTS Mini Backpack Black Faux Leather with Red Trim,med,35.0,28.5,40,28,10.01,10,28,18.49,False,,IMG20260626204156.jpg,Pre-owned - Good,,
-10,Costume Jewelry Lot (Gold & Silver Tone),med,50.0,25.74,40,18,6.95,9,13,18.79,False,,IMG20260626194224.jpg,Pre-owned - Good,,
-101,Body Glove 3T Barefoot Cinch Water Shoes Men's US 9 Black/Black — New in Bag,med,30.0,25.0,40,18,9.28,10,22,15.72,False,,IMG20260626204052.jpg,New with tags,,
-11,WWE Wrestling Action Figures Lot (Large Bin),med,80.0,24.99,40,75,6.95,15,14,18.04,False,,IMG20260626194453.jpg;IMG20260626194503.jpg;IMG20260626194457.jpg,Pre-owned - Good,,
-93,Super Nintendo World Universal Studios Souvenir Set — Mushroom Cup + Star Popcorn Bucket with Lanyards,med,80.0,24.99,40,40,9.71,9,20,15.28,False,,IMG20260626203702.jpg,New with tags,,
-79,Starbucks Stainless Steel Tumbler — Matte Silver with Mint Lid,med,30.0,24.75,40,12,8.1,9,20,16.65,False,,IMG20260626201847.jpg,Pre-owned - Good,,
-51,Drone Home Board Game (PlayMonster),med,30.0,24.74,40,20,9.98,9,22,14.76,False,,IMG20260626200107.jpg,Pre-owned - Good,,
-52,Disney MagicBandits Charm Sets (2 Packs: Princess + Icons),med,15.0,24.0,40,12,5.98,9,24,18.02,False,,IMG20260626200125.jpg,New without tags,,
+107,Coach Black Leather Slim Card Case Wallet — Used,med,120.0,45.48,40,18,8.0,4,29,112.0,False,,IMG20260626204329.jpg,Pre-owned - Good,published,398137453127
+88,Apple iPhone 11 Pro Smart Battery Case Pink Sand (MWVN3LL/A) — Open Box,med,35.0,41.49,40,38,6.16,9,16,28.84,False,,IMG20260626202845.jpg;IMG20260626202849.jpg,New without tags,published,398137481283
+57,Starbucks Pike Place 12oz Stainless Steel Tumbler,med,110.0,36.44,40,25,9.2,9,31,27.24,False,,IMG20260626200342.jpg;IMG20260626200329.jpg;IMG20260626200315.jpg,New without tags,published,398137483794
+59,Mighty Beanz Slammer Time Race Track Set,med,45.0,35.0,11,30,9.45,9,31,25.55,False,,IMG20260626200432.jpg,New without tags,published,398137487987
+72,"Bluetooth Karaoke Microphone with Built-In Speaker — Pink, Hard Case",med,15.0,34.57,40,15,9.94,9,15,24.63,False,,IMG20260626201402.jpg,Pre-owned - Good,published,398137487120
+62,Disney Pins Lanyard Collection with Extras,med,200.0,30.48,40,22,7.99,4,8,22.49,False,,IMG20260626200908.jpg,Pre-owned - Good,published,398137490581
+103,BT21 x BTS Mini Backpack Black Faux Leather with Red Trim,med,35.0,28.5,40,28,10.01,10,28,18.49,False,,IMG20260626204156.jpg,Pre-owned - Good,published,398137489430
+10,Costume Jewelry Lot (Gold & Silver Tone),med,50.0,25.74,40,18,6.95,9,13,18.79,False,,IMG20260626194224.jpg,Pre-owned - Good,published,398137510601
+101,Body Glove 3T Barefoot Cinch Water Shoes Men's US 9 Black/Black — New in Bag,med,30.0,25.0,40,18,9.28,10,22,15.72,False,,IMG20260626204052.jpg,New with tags,published,398137505181
+11,WWE Wrestling Action Figures Lot (Large Bin),med,80.0,24.99,40,75,6.95,15,14,18.04,False,,IMG20260626194453.jpg;IMG20260626194503.jpg;IMG20260626194457.jpg,Pre-owned - Good,published,398137514077
+93,Super Nintendo World Universal Studios Souvenir Set — Mushroom Cup + Star Popcorn Bucket with Lanyards,med,80.0,24.99,40,40,9.71,9,20,15.28,False,,IMG20260626203702.jpg,New with tags,published,398137503830
+79,Starbucks Stainless Steel Tumbler — Matte Silver with Mint Lid,med,30.0,24.75,40,12,8.1,9,20,16.65,False,,IMG20260626201847.jpg,Pre-owned - Good,published,398137508231
+51,Drone Home Board Game (PlayMonster),med,30.0,24.74,40,20,9.98,9,22,14.76,False,,IMG20260626200107.jpg,Pre-owned - Good,published,398137501262
+52,Disney MagicBandits Charm Sets (2 Packs: Princess + Icons),med,15.0,24.0,40,12,5.98,9,24,18.02,False,,IMG20260626200125.jpg,New without tags,published,398137525426
 24,"Funko Pop Dragon Ball Z #10 Vegeta (Silver Chrome, 25th Anniversary)",med,31.28,22.5,40,10,8.78,8,24,13.72,False,,IMG20260626194801.jpg,New without tags,,
-58,Samsung SSG-3100GB 3D Active Glasses (2-Pack),med,20.0,22.0,40,18,8.8,9,30,13.2,False,,IMG20260626200419.jpg,New without tags,,
-53,"Disney Vinylmation Figures Lot (~10 pieces, Marvel/Star Wars/Disney)",med,40.0,21.97,40,25,10.16,15,34,11.81,False,,IMG20260626200141.jpg,Pre-owned - Good,,
+58,Samsung SSG-3100GB 3D Active Glasses (2-Pack),med,20.0,22.0,40,18,8.8,9,30,13.2,False,,IMG20260626200419.jpg,New without tags,published,398137519401
+53,"Disney Vinylmation Figures Lot (~10 pieces, Marvel/Star Wars/Disney)",med,40.0,21.97,40,25,10.16,15,34,11.81,False,,IMG20260626200141.jpg,Pre-owned - Good,published,398137512363
 114,"Pokemon TCG Collector Lot — 4 Tins + Cards, Player's Guides & Handbook",med,200,21.0,40,111,6.77,4,31,193.23,False,,IMG20260626193700.jpg;IMG20260626193640.jpg;IMG20260626193734.jpg;IMG20260626194002.jpg;IMG20260626194007.jpg;IMG20260626193748.jpg;IMG20260626193750.jpg;IMG20260626194135.jpg;IMG20260626195936.jpg,Pre-owned - Good,published,398137149393
 3,Beckett Shield Toploaders 35pt (25-count box),med,27.46,20.97,40,12,6.49,6,15,14.48,False,,IMG20260626193613.jpg,New without tags,,
 1,Roblox Action Figures Lot (Large Bin),med,26.55,19.99,40,30,6.56,15,10,13.43,False,,IMG20260626193509.jpg;IMG20260626193514.jpg;IMG20260626193520.jpg,Pre-owned - Good,,
 18,Funko Pop WWE #62 Charlotte Flair,med,27.94,19.99,40,22,7.95,8,29,12.04,False,,IMG20260626194701.jpg,New without tags,,
-90,Chamberlain myQ Smart Garage Hub with Light,med,25.0,19.99,40,15,9.61,10,20,10.38,False,,IMG20260626202934.jpg,Pre-owned - Good,,
-36,Harry Potter Wand — Wizarding World Universal Studios,med,90.0,19.97,40,20,9.75,9,32,10.22,False,,IMG20260626195220.jpg;IMG20260626195200.jpg,Pre-owned - Excellent,,
+90,Chamberlain myQ Smart Garage Hub with Light,med,25.0,19.99,40,15,9.61,10,20,10.38,False,,IMG20260626202934.jpg,Pre-owned - Good,published,398137537206
+36,Harry Potter Wand — Wizarding World Universal Studios,med,90.0,19.97,40,20,9.75,9,32,10.22,False,,IMG20260626195220.jpg;IMG20260626195200.jpg,Pre-owned - Excellent,published,398137529864
 98,Stone Mountain Reversible Bonded Leather Belt Black/Brown Size XL (SM-7-740-3A),med,26.34,18.84,40,8,7.5,4,27,11.34,False,,IMG20260626203824.jpg;IMG20260626203849.jpg;IMG20260626203904.jpg,Pre-owned - Good,,
 85,Cardinal Poker Chip Set 115g + Las Vegas Souvenir Chips,med,27.85,18.24,40,10,9.61,10,27,8.63,False,,IMG20260626202452.jpg,Pre-owned - Excellent,,
 27,"Funko Pop Dragon Ball Z #154 Super Saiyan Vegeta (Red Chrome, SDCC 2019)",med,26.36,18.23,40,12,8.13,8,25,10.1,False,,IMG20260626194850.jpg,New without tags,,
@@ -67,23 +67,23 @@ lot_id,title,confidence,listing_price,ebay_price_median,ebay_price_n,est_price_o
 12,Funko Pop Spider-Man Far From Home #475 Hydro-Man,med,18.49,9.07,40,6,9.42,8,23,-0.35,False,,IMG20260626194610.jpg,New without tags,,
 13,Funko Pop Avengers #466 Hawkeye (Walgreens Exclusive),med,17.24,8.69,40,7,8.55,4,28,0.14,False,,IMG20260626194619.jpg,New without tags,,
 33,Funko Pop Mysterio #473 (Spider-Man Far From Home),med,16.5,8.5,40,9,8.0,8,23,0.5,False,,IMG20260626194942.jpg,Pre-owned - Excellent,,
-74,Vintage Mahjong Set in Brown Croc-Embossed Faux Leather Briefcase,low,300.0,300.0,40,30,18.95,6,27,281.05,False,,IMG20260626201529.jpg;IMG20260626201512.jpg,Pre-owned - Good,,
-44,Executive Optical 'Little Ethan' Rose Gold Kids Eyeglasses with Case,low,190.0,193.73,1,8,6.24,6,11,187.49,False,,IMG20260626195714.jpg;IMG20260626195728.jpg;IMG20260626195739.jpg;IMG20260626195654.jpg,New without tags,,
-76,Sony DCR-TRV22 MiniDV Digital Handycam Camcorder with Carry Bag,low,150.0,139.96,40,50,17.85,10,25,122.11,False,,IMG20260626201620.jpg;IMG20260626201637.jpg,Pre-owned - Good,,
+74,Vintage Mahjong Set in Brown Croc-Embossed Faux Leather Briefcase,low,300.0,300.0,40,30,18.95,6,27,281.05,False,,IMG20260626201529.jpg;IMG20260626201512.jpg,Pre-owned - Good,published,398137232657
+44,Executive Optical 'Little Ethan' Rose Gold Kids Eyeglasses with Case,low,190.0,193.73,1,8,6.24,6,11,187.49,False,,IMG20260626195714.jpg;IMG20260626195728.jpg;IMG20260626195739.jpg;IMG20260626195654.jpg,New without tags,published,127952150671
+76,Sony DCR-TRV22 MiniDV Digital Handycam Camcorder with Carry Bag,low,150.0,139.96,40,50,17.85,10,25,122.11,False,,IMG20260626201620.jpg;IMG20260626201637.jpg,Pre-owned - Good,published,398137326889
 63,Oakley Tactical Field Gear Waist/Fanny Pack,low,187,131.97,32,28,11.57,10,28,175.43,False,,IMG20260626201005.jpg;IMG20260626201014.jpg;IMG20260626201009.jpg,New with tags,published,398137124610
-86,Apple iPad Mini Lot of 2 + iPhone Lot of 5 (As-Is Parts/Repair),low,350.0,122.47,40,80,14.71,9,14,107.76,False,,IMG20260626202634.jpg;IMG20260626202657.jpg;IMG20260626202551.jpg;IMG20260626202559.jpg;IMG20260626202602.jpg,Pre-owned - Fair,,
-102,Oakley Metal Frame Sport Sunglasses with Hard Case,low,120.0,116.62,40,30,10.88,6,21,105.74,False,,IMG20260626204123.jpg;IMG20260626204113.jpg,Pre-owned - Good,,
-43,Yikes in the Yard Halloween Animated LED Doorbell,low,10.0,72.08,8,8,9.99,9,29,62.09,False,,IMG20260626195636.jpg,New with tags,,
-42,NinjaIon Personal Air Purifier Multi-Pack,low,100.0,47.17,40,15,8.0,9,10,39.17,False,,IMG20260626195615.jpg;IMG20260626195622.jpg,New without tags,,
-75,T-Mobile Personal CellSpot 4G LTE Signal Booster — Retail Box,low,40.0,39.99,40,18,9.99,9,24,30.01,False,,IMG20260626201548.jpg;IMG20260626201555.jpg,Pre-owned - Good,,
-65,Hercha Cordless Handheld Vacuum Cleaner,low,25.0,35.39,40,8,9.38,9,4,26.01,False,,IMG20260626201106.jpg,Pre-owned - Good,,
+86,Apple iPad Mini Lot of 2 + iPhone Lot of 5 (As-Is Parts/Repair),low,350.0,122.47,40,80,14.71,9,14,107.76,False,,IMG20260626202634.jpg;IMG20260626202657.jpg;IMG20260626202551.jpg;IMG20260626202559.jpg;IMG20260626202602.jpg,Pre-owned - Fair,published,398137449076
+102,Oakley Metal Frame Sport Sunglasses with Hard Case,low,120.0,116.62,40,30,10.88,6,21,105.74,False,,IMG20260626204123.jpg;IMG20260626204113.jpg,Pre-owned - Good,published,398137351765
+43,Yikes in the Yard Halloween Animated LED Doorbell,low,10.0,72.08,8,8,9.99,9,29,62.09,False,,IMG20260626195636.jpg,New with tags,published,398137427999
+42,NinjaIon Personal Air Purifier Multi-Pack,low,100.0,47.17,40,15,8.0,9,10,39.17,False,,IMG20260626195615.jpg;IMG20260626195622.jpg,New without tags,published,398137434239
+75,T-Mobile Personal CellSpot 4G LTE Signal Booster — Retail Box,low,40.0,39.99,40,18,9.99,9,24,30.01,False,,IMG20260626201548.jpg;IMG20260626201555.jpg,Pre-owned - Good,published,398137475760
+65,Hercha Cordless Handheld Vacuum Cleaner,low,25.0,35.39,40,8,9.38,9,4,26.01,False,,IMG20260626201106.jpg,Pre-owned - Good,published,398137485855
 23,Funko Pop Ravelo Komiks Universe #23 Darna,low,37.73,28.0,5,45,9.73,8,2,18.27,False,,IMG20260626194752.jpg,New without tags,,
-37,Panini NBA Hoops 2022-23 Blaster Box (opened),low,35.0,24.99,40,10,10.01,6,21,14.98,False,,IMG20260626195343.jpg;IMG20260626195322.jpg;IMG20260626195331.jpg;IMG20260626195349.jpg,Pre-owned - Good,,
-49,Starbucks 12 fl oz Vacuum Insulated Tumbler (Wave Graphic),low,30.0,24.99,40,15,9.14,9,27,15.85,False,,IMG20260626195952.jpg;IMG20260626200004.jpg,New with tags,,
-82,"DC Comics Justice League 7-Figure Action Figure Lot — Flash, Batman, Superman, Wonder Woman, Aquaman, Cyborg, Green Lantern",low,190.0,24.99,40,25,10.01,15,23,14.98,False,,IMG20260626202114.jpg,Pre-owned - Good,,
-96,Flowflex COVID-19 Antigen Home Test — Lot of 3,low,25.0,24.95,25,6,6.37,6,24,18.58,False,,IMG20260626203740.jpg,New without tags,,
+37,Panini NBA Hoops 2022-23 Blaster Box (opened),low,35.0,24.99,40,10,10.01,6,21,14.98,False,,IMG20260626195343.jpg;IMG20260626195322.jpg;IMG20260626195331.jpg;IMG20260626195349.jpg,Pre-owned - Good,published,398137498747
+49,Starbucks 12 fl oz Vacuum Insulated Tumbler (Wave Graphic),low,30.0,24.99,40,15,9.14,9,27,15.85,False,,IMG20260626195952.jpg;IMG20260626200004.jpg,New with tags,published,398137506673
+82,"DC Comics Justice League 7-Figure Action Figure Lot — Flash, Batman, Superman, Wonder Woman, Aquaman, Cyborg, Green Lantern",low,190.0,24.99,40,25,10.01,15,23,14.98,False,,IMG20260626202114.jpg,Pre-owned - Good,published,398137500129
+96,Flowflex COVID-19 Antigen Home Test — Lot of 3,low,25.0,24.95,25,6,6.37,6,24,18.58,False,,IMG20260626203740.jpg,New without tags,error,
 91,"Arris / Xfinity Cable Modem Router (Black Wedge, with Coax Cable)",low,31.8,23.85,40,12,7.95,9,15,15.9,False,,IMG20260626203004.jpg;IMG20260626203010.jpg,Pre-owned - Good,,
-105,Champion VentureDry Touch Screen Gloves Black — New with Tags,low,25.0,21.59,27,7,7.21,4,14,14.38,False,,IMG20260626204246.jpg,New with tags,,
+105,Champion VentureDry Touch Screen Gloves Black — New with Tags,low,25.0,21.59,27,7,7.21,4,14,14.38,False,,IMG20260626204246.jpg,New with tags,published,398137539136
 40,Speks Soothe Magnetic Balls Set,low,28.62,20.02,40,15,8.6,4,27,11.42,False,,IMG20260626195517.jpg,New without tags,,
 46,INSPI Premium 64oz Water Bottle (Boxed),low,27.94,19.99,40,12,7.95,9,5,12.04,False,,IMG20260626195851.jpg,New without tags,,
 106,NBA Logo Crew Socks Size XL Black/White — New in Package (PSKG47-010),low,26.22,19.98,40,5,6.24,4,25,13.74,False,,IMG20260626204254.jpg;IMG20260626204257.jpg,New without tags,,
@@ -105,5 +105,5 @@ lot_id,title,confidence,listing_price,ebay_price_median,ebay_price_n,est_price_o
 70,Greetings Dubai 4-Pack Souvenir Fridge Magnets — New in Blister Pack,low,16.21,10.49,40,5,5.72,4,36,4.77,False,,IMG20260626201300.jpg,New without tags,,
 41,Crayola Fine-Tip Markers in Collector Tin,low,17.68,9.5,4,5,8.18,6,15,1.32,False,,IMG20260626195538.jpg;IMG20260626195544.jpg,Pre-owned - Good,,
 7,Avengers Infinity War Dog Tags & Keychain Set,low,15.84,8.97,40,10,6.87,4,26,2.1,False,,IMG20260626193835.jpg,Pre-owned - Good,,
-35,HEPA Air Purifier Replacement Filter,low,30.0,,,,,9,0,,False,,IMG20260626195136.jpg,New without tags,,
-112,Funko Pop Collection — 24-Figure Group Lot,,390.0,369.48,,,27.7,,24,341.78,True,12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;27;28;29;30;31;32;33;34;113,IMG20260626195018.jpg;IMG20260626194530.jpg,,,
+35,HEPA Air Purifier Replacement Filter,low,30.0,,,,,9,0,,False,,IMG20260626195136.jpg,New without tags,published,398137495110
+112,Funko Pop Collection — 24-Figure Group Lot,,390.0,369.48,,,27.7,,24,341.78,True,12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;27;28;29;30;31;32;33;34;113,IMG20260626195018.jpg;IMG20260626194530.jpg,,published,398137229104
